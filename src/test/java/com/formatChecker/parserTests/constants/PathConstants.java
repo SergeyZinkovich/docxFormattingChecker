@@ -45,4 +45,9 @@ public class PathConstants {
             "paragraphs_count/incorrect/config/config.json";
     public static final String PARAGRAPH_COUNT_INCORRECT_DOCUMENT_PATH = "src/test/resources/comparerAndParserTests/" +
             "paragraphs_count/incorrect/document/document.docx";
+
+    public static final String PARAGRAPH_CHARACTER_SPACING_CONFIG_PATH = "src/test/resources/comparerAndParserTests/" +
+            "paragraph_properties/character_spacing/config/config.json";
+    public static final String PARAGRAPH_CHARACTER_SPACING_DOCUMENT_PATH = "src/test/resources/comparerAndParserTests/" +
+            "paragraph_properties/character_spacing/document/document.docx";
 }

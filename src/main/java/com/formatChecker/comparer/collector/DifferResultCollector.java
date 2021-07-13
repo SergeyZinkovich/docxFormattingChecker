@@ -284,6 +284,9 @@ public class DifferResultCollector {
         if (paragraph.getPageBreakBefore() != null)
             paragraphResult += paragraph.getPageBreakBefore() + "\n\t";
 
+        if (paragraph.getCharacterSpacing() != null)
+            paragraphResult += paragraph.getCharacterSpacing() + "\n\t";
+
         return paragraphResult;
     }
 

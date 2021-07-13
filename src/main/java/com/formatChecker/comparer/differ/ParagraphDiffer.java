@@ -58,6 +58,12 @@ public class ParagraphDiffer implements Differ {
                 expectedParagraph.getPageBreakBefore(),
                 "page break before paragraph"));
 
+        paragraphDifference.setCharacterSpacing(checkDoubleParameter(
+                actualParagraph.getCharacterSpacing(),
+                expectedParagraph.getCharacterSpacing(),
+                "character spacing", "pt"
+        ));
+
         return paragraphDifference;
     }
 
