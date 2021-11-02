@@ -7,6 +7,7 @@ import com.google.gson.Gson;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,7 +26,7 @@ public class ConfigParser {
     Config parseConfig() throws IOException {
 
         Gson gson = new Gson();
-        FileReader fileReader = new FileReader(filePath);
+        FileReader fileReader = new FileReader(filePath, StandardCharsets.UTF_8);
 
         return gson.fromJson(fileReader, Config.class);
     }
