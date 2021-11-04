@@ -2,8 +2,8 @@ package com.formatChecker.fixerTests.paragraph;
 
 import com.formatChecker.comparer.collector.DifferResultCollector;
 import com.formatChecker.controller.DocumentController;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 
 import static com.formatChecker.fixerTests.constants.MessageConstants.OK_MESSAGE;
@@ -21,7 +21,7 @@ public class ParagraphTest {
                         .getDifference())
                 .collectDifferenceAsString();
 
-        Assert.assertEquals(OK_MESSAGE, difference);
+        Assertions.assertEquals(OK_MESSAGE, difference);
     }
 
     @DisplayName("Checks the result of fixing paragraphs by heading")
@@ -35,6 +35,6 @@ public class ParagraphTest {
                         .getDifference())
                 .collectDifferenceAsString();
 
-        Assert.assertEquals(OK_MESSAGE, difference);
+        Assertions.assertEquals(OK_MESSAGE, difference);
     }
 }

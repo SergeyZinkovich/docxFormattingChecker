@@ -4,8 +4,8 @@ import com.formatChecker.config.model.Config;
 import com.formatChecker.config.parser.ConfigParser;
 import com.formatChecker.controller.DocumentController;
 import com.formatChecker.document.model.DocxDocument;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 
 import static com.formatChecker.parserTests.constants.PathConstants.HEADING_CONFIG_PATH;
@@ -24,11 +24,11 @@ public class HeadingTest {
         Config config = new ConfigParser(HEADING_CONFIG_PATH).getConfig();
 
         for (int i = 0; i < docxDocument.getParagraphs().size(); ++i) {
-            Assert.assertEquals(
+            Assertions.assertEquals(
                     java.util.Optional.ofNullable(config.getRequiredHeadings().get(i).getLevel()),
                     java.util.Optional.ofNullable(docxDocument.getParagraphs().get(i).getHeadingLevel()));
 
-            Assert.assertEquals(
+            Assertions.assertEquals(
                     java.util.Optional.ofNullable(config.getRequiredHeadings().get(i).getText()),
                     java.util.Optional.ofNullable(docxDocument.getParagraphs().get(i).getText()));
         }

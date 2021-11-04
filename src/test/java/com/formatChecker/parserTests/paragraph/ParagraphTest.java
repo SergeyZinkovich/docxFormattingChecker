@@ -5,9 +5,9 @@ import com.formatChecker.config.model.participants.Paragraph;
 import com.formatChecker.config.parser.ConfigParser;
 import com.formatChecker.controller.DocumentController;
 import com.formatChecker.document.model.DocxDocument;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 import static com.formatChecker.parserTests.constants.PathConstants.*;
 
@@ -26,25 +26,25 @@ public class ParagraphTest {
         Paragraph<Double, Boolean> paragraph1 = docxDocument.getParagraphs().get(0);
         Paragraph<Double, Boolean> paragraph2 = docxDocument.getParagraphs().get(1);
 
-        Assert.assertEquals(
+        Assertions.assertEquals(
                 config.getStyles().get("style1").getParagraph().getAlignment(),
                 paragraph1.getAlignment());
 
-        Assert.assertEquals(
+        Assertions.assertEquals(
                 config.getStyles().get("style2").getParagraph().getFirstLineIndent(),
                 paragraph2.getFirstLineIndent());
 
         for (int i = 0; i < paragraph1.getRuns().size(); ++i) {
-            Assert.assertEquals(
+            Assertions.assertEquals(
                     config.getStyles().get("style1").getRun().getFontFamily(),
                     paragraph1.getRuns().get(i).getFontFamily());
 
-            Assert.assertEquals(
+            Assertions.assertEquals(
                     config.getStyles().get("style1").getRun().getBold(),
                     paragraph1.getRuns().get(i).getBold());
         }
         for (int i = 0; i < paragraph2.getRuns().size(); ++i) {
-            Assert.assertEquals(
+            Assertions.assertEquals(
                     config.getStyles().get("style2").getRun().getFontSize(),
                     paragraph2.getRuns().get(i).getFontSize());
         }
@@ -71,25 +71,25 @@ public class ParagraphTest {
                 bodyParagraph = paragraph;
         }
 
-        Assert.assertEquals(
+        Assertions.assertEquals(
                 config.getStyles().get("heading1").getParagraph().getAlignment(),
                 headingParagraph.getAlignment());
 
-        Assert.assertEquals(
+        Assertions.assertEquals(
                 config.getStyles().get("body").getParagraph().getFirstLineIndent(),
                 bodyParagraph.getFirstLineIndent());
 
         for (int i = 0; i < headingParagraph.getRuns().size(); ++i) {
-            Assert.assertEquals(
+            Assertions.assertEquals(
                     config.getStyles().get("heading1").getRun().getFontFamily(),
                     headingParagraph.getRuns().get(i).getFontFamily());
 
-            Assert.assertEquals(
+            Assertions.assertEquals(
                     config.getStyles().get("heading1").getRun().getBold(),
                     headingParagraph.getRuns().get(i).getBold());
         }
         for (int i = 0; i < bodyParagraph.getRuns().size(); ++i) {
-            Assert.assertEquals(
+            Assertions.assertEquals(
                     config.getStyles().get("body").getRun().getFontSize(),
                     bodyParagraph.getRuns().get(i).getFontSize());
         }

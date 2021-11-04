@@ -4,8 +4,8 @@ import com.formatChecker.config.model.Config;
 import com.formatChecker.config.parser.ConfigParser;
 import com.formatChecker.controller.DocumentController;
 import com.formatChecker.document.model.DocxDocument;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 
 import static com.formatChecker.parserTests.constants.PathConstants.*;
@@ -22,8 +22,8 @@ public class FooterTest {
 
         Config config = new ConfigParser(FOOTER_PAGE_CONFIG_PATH).getConfig();
 
-        Assert.assertEquals(config.getFooter().getType(), docxDocument.getFooter().getType());
-        Assert.assertEquals(config.getFooter().getAlignment(), docxDocument.getFooter().getAlignment());
+        Assertions.assertEquals(config.getFooter().getType(), docxDocument.getFooter().getType());
+        Assertions.assertEquals(config.getFooter().getAlignment(), docxDocument.getFooter().getAlignment());
     }
 
     @DisplayName("Checks the result of parsing a footer with text value aligned by left")
@@ -37,7 +37,7 @@ public class FooterTest {
 
         Config config = new ConfigParser(FOOTER_TEXT_CONFIG_PATH).getConfig();
 
-        Assert.assertEquals(config.getFooter().getType(), docxDocument.getFooter().getType());
-        Assert.assertEquals(config.getFooter().getAlignment(), docxDocument.getFooter().getAlignment());
+        Assertions.assertEquals(config.getFooter().getType(), docxDocument.getFooter().getType());
+        Assertions.assertEquals(config.getFooter().getAlignment(), docxDocument.getFooter().getAlignment());
     }
 }

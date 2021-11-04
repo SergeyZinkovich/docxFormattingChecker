@@ -5,8 +5,8 @@ import com.formatChecker.config.model.participants.Section;
 import com.formatChecker.config.parser.ConfigParser;
 import com.formatChecker.controller.DocumentController;
 import com.formatChecker.document.model.DocxDocument;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 
 import static com.formatChecker.parserTests.constants.PathConstants.SECTION_CONFIG_PATH;
@@ -25,21 +25,21 @@ public class SectionTest {
         Config config = new ConfigParser(SECTION_CONFIG_PATH).getConfig();
 
         for (Section<Double> section : docxDocument.getSections()) {
-            Assert.assertEquals(
+            Assertions.assertEquals(
                     config.getSection().getPageWidth(),
                     section.getPageWidth());
 
-            Assert.assertEquals(
+            Assertions.assertEquals(
                     config.getSection().getPageHeight(),
                     section.getPageHeight());
 
-            Assert.assertEquals(
+            Assertions.assertEquals(
                     config.getSection().getOrientation(),
                     section.getOrientation());
 
 
             for (int j = 0; j < section.getMargins().size(); ++j) {
-                Assert.assertEquals(
+                Assertions.assertEquals(
                         config.getSection().getMargins().get(j),
                         section.getMargins().get(j));
             }
