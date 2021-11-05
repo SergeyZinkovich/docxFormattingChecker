@@ -10,3 +10,57 @@ See examples of `config.json` in `src/test/resources`
 
 ### Run tests
     ./gradlew test
+
+---
+## Supported options
+- `styles<string: style>[]`
+  - `style`
+- `section`
+  - orientation - string
+  - margins - double
+  - page height - double
+  - page width - double 
+- `pages`
+  - min - int 
+  - max - int
+- `footer`
+  - type - string(text/page)
+  - alignment - string
+  - error message -string 
+- `drawing`
+  - textStartsWith - string
+  - `paragraph`
+  - `style`
+- `requiredHeadings[]`
+  - level - int
+  - text -string
+- findHeadingsByTOC - bool
+- generateNewDocument - bool
+
+### Only inside other options
+
+- `style`  
+  - paragraphs[] - int
+  - paragraphProperties - `paragraph`
+  - runProperties - `run`
+  
+- `paragraph`
+  - paragraphs[] - int
+  - `runs[]`  
+  - alignment - string
+  - firstLineIndent - double
+  - leftIndent - double
+  - rightIndent - double
+  - lineSpacing - double
+  - spacingBefore - double
+  - spacingAfter - double
+  - pageBreakBefore - bool
+
+- `run`
+  - fontFamily - string
+  - fontSize - double
+  - bold - bool
+  - italic - bool
+  - strikethrough - bool
+  - underline - string
+  - textColor - string
