@@ -16,6 +16,7 @@ public class Difference {
     }
 
     String pages;
+    String paragraphsCount;
 
     List<Section<String>> sections;
     List<Paragraph<String, String>> paragraphs;
@@ -29,6 +30,14 @@ public class Difference {
 
     public String getPages() {
         return pages;
+    }
+
+    public void setParagraphsCount(String paragraphsCount) {
+        this.paragraphsCount = paragraphsCount;
+    }
+
+    public String getParagraphsCount() {
+        return paragraphsCount;
     }
 
     public List<Section<String>> getSections() {

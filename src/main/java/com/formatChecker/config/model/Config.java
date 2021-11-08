@@ -7,6 +7,7 @@ import java.util.List;
 
 public class Config {
     Pages pages;
+    ParagraphsCount paragraphsCount;
 
     Section<Double> section;
     HashMap<String, Style> styles;
@@ -22,6 +23,10 @@ public class Config {
 
     public Pages getPages() {
         return pages;
+    }
+
+    public ParagraphsCount getParagraphsCount() {
+        return paragraphsCount;
     }
 
     public Boolean getFindHeadingsByTOC() {

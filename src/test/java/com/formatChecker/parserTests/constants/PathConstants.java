@@ -35,4 +35,14 @@ public class PathConstants {
             "drawing/config/config.json";
     public static final String DRAWING_DOCUMENT_PATH = "src/test/resources/comparerAndParserTests/" +
             "drawing/document/document.docx";
+
+    public static final String PARAGRAPH_COUNT_CORRECT_CONFIG_PATH = "src/test/resources/comparerAndParserTests/" +
+            "paragraphs_count/correct/config/config.json";
+    public static final String PARAGRAPH_COUNT_CORRECT_DOCUMENT_PATH = "src/test/resources/comparerAndParserTests/" +
+            "paragraphs_count/correct/document/document.docx";
+
+    public static final String PARAGRAPH_COUNT_INCORRECT_CONFIG_PATH = "src/test/resources/comparerAndParserTests/" +
+            "paragraphs_count/incorrect/config/config.json";
+    public static final String PARAGRAPH_COUNT_INCORRECT_DOCUMENT_PATH = "src/test/resources/comparerAndParserTests/" +
+            "paragraphs_count/incorrect/document/document.docx";
 }

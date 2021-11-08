@@ -2,12 +2,12 @@ package com.formatChecker.comparer.differ;
 
 import com.formatChecker.config.model.participants.Pages;
 
-public class DocumentDiffer {
+public class PagesCountDiffer {
     Integer actualPages;
     Pages expectedPages;
     String difference;
 
-    public DocumentDiffer(Integer actualPages, Pages expectedPages) {
+    public PagesCountDiffer(Integer actualPages, Pages expectedPages) {
         this.actualPages = actualPages;
         this.expectedPages = expectedPages;
         this.difference = comparePages();

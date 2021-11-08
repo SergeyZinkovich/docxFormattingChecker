@@ -1,7 +1,8 @@
 package com.formatChecker.controller;
 
-import com.formatChecker.comparer.differ.DocumentDiffer;
+import com.formatChecker.comparer.differ.PagesCountDiffer;
 import com.formatChecker.comparer.differ.HeadingDiffer;
+import com.formatChecker.comparer.differ.ParagraphsCountDiffer;
 import com.formatChecker.comparer.model.Difference;
 import com.formatChecker.comparer.model.participants.HeadingsList;
 import com.formatChecker.config.model.Config;
@@ -45,6 +46,8 @@ public class DocumentController {
 
     HeadingsList headings;
 
+    int ParagraphsCount = 0;
+
     public DocumentController(String configPath, String docxPath)
             throws Exception {
         this.docxPath = docxPath;
@@ -70,13 +73,15 @@ public class DocumentController {
     Difference getDocumentDifference() throws Exception {
         Difference difference = new Difference();
 
-        difference.setPages(new DocumentDiffer(docxDocument.getPages(), config.getPages()).getDifference());
+        difference.setPages(new PagesCountDiffer(docxDocument.getPages(), config.getPages()).getDifference());
         difference.setHeadings(new HeadingDiffer(headings, configParser.getRequiredHeadings()).getHeadingsDifference());
 
         runSectionController(difference);
         runDrawingController(difference);
         runFooterController(difference);
         runParagraphController(difference);
+
+        difference.setParagraphsCount(new ParagraphsCountDiffer(this.ParagraphsCount, config.getParagraphsCount()).getDifference());
 
         if (shouldFix)
             saveNewDocument();
@@ -132,6 +137,8 @@ public class DocumentController {
                 }
             }
         }
+
+        this.ParagraphsCount = count;
 
         if (config.getFindHeadingsByTOC() && !afterTOC)
             System.out.println("\nError: Table of Contents not found. Please create or update Table of Contents.\n");

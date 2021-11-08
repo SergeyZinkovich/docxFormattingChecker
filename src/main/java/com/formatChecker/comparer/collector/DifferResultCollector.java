@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 public class DifferResultCollector {
     Difference difference;
     String pagesResult;
+    String paragraphsCountResult;
     String sectionResult;
     String footerResult;
     String headingResult;
@@ -34,6 +35,7 @@ public class DifferResultCollector {
 
     public String collectDifferenceAsString() {
         pagesResult = getPageDifferenceAsString();
+        paragraphsCountResult = getParagraphsCountDifferenceAsString();
         sectionResult = getSectionDifferenceAsString();
         footerResult = getFooterDifferenceAsString();
         headingResult = getHeadingDifferenceAsString();
@@ -41,6 +43,7 @@ public class DifferResultCollector {
         drawingsResult = getDrawingsDifferenceAsString();
 
         String totalResult = pagesResult +
+                paragraphsCountResult +
                 sectionResult +
                 footerResult +
                 headingResult +
@@ -68,6 +71,13 @@ public class DifferResultCollector {
     String getPageDifferenceAsString() {
         if (difference.getPages() != null)
             return String.format("\n\nNumber of pages: %s", difference.getPages() + "\n");
+
+        return "";
+    }
+
+    String getParagraphsCountDifferenceAsString() {
+        if (difference.getParagraphsCount() != null)
+            return String.format("\n\tNumber of paragraphs: %s", difference.getParagraphsCount());
 
         return "";
     }
@@ -310,6 +320,7 @@ public class DifferResultCollector {
         Map<String, Integer> count = new HashMap<>();
         List<String> words = Arrays.stream(p.split("\\n\\t+"))
                 .filter(s -> !s.contains("\n"))
+                .filter(s -> !s.equals(""))
                 .collect(Collectors.toList());
 
         for (String w : words)

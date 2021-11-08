@@ -1,0 +1,22 @@
+{
+    "styles": {
+        "heading1": {
+            "paragraphProperties": {
+            },
+            "runProperties": {
+            }
+        },
+
+        "body": {
+		    "paragraphProperties": {
+            },
+            "runProperties": {
+            }
+        }
+    },
+    "paragraphsCount": {
+        "min": 1,
+        "max": 5
+    },
+	"findHeadingsByTOC": true
+}
