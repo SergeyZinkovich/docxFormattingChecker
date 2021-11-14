@@ -41,6 +41,7 @@ public class ParagraphStyleParser extends ParagraphParser implements ParagraphSe
         setLineSpacing();
         setSpacingBefore();
         setSpacingAfter();
+        setCharacterSpacing();
 
         return paragraph;
     }
@@ -159,5 +160,21 @@ public class ParagraphStyleParser extends ParagraphParser implements ParagraphSe
         }
 
         paragraph.setSpacingAfter(spacingAfter);
+    }
+
+    @Override
+    public void setCharacterSpacing() {
+        Double characterSpacing = getCharacterSpacing(paragraphProperties);
+
+        while (parentStyle != null && characterSpacing == null) {
+            characterSpacing = getCharacterSpacing(getParagraphProperties(parentStyle));
+            parentStyle = getParentStyle(parentStyle, styles);
+        }
+
+        if (characterSpacing == null) {
+            characterSpacing = defaultParagraph.getCharacterSpacing();
+        }
+
+        paragraph.setCharacterSpacing(characterSpacing);
     }
 }

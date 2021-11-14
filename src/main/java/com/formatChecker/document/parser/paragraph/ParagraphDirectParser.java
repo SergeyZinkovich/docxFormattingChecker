@@ -85,6 +85,7 @@ public class ParagraphDirectParser extends ParagraphParser implements ParagraphS
         setLineSpacing();
         setSpacingBefore();
         setSpacingAfter();
+        setCharacterSpacing();
 
         setIsHeading();
         setPageBreakBefore();
@@ -204,5 +205,15 @@ public class ParagraphDirectParser extends ParagraphParser implements ParagraphS
     void setPageBreakBefore() {
         if (paragraphsOnNewPages != null && id != null)
             paragraph.setPageBreakBefore(paragraphsOnNewPages.stream().anyMatch(p -> p.equals(id)));
+    }
+
+    @Override
+    public void setCharacterSpacing() {
+        Double characterSpacing = getCharacterSpacing(paragraphProperties);
+        if (characterSpacing == null) {
+            characterSpacing = styleParagraph != null ? styleParagraph.getCharacterSpacing() :
+                    defaultParagraph.getCharacterSpacing();
+        }
+        paragraph.setCharacterSpacing(characterSpacing);
     }
 }

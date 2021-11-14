@@ -7,6 +7,10 @@ public interface ValuesConverter {
         return round(halfPt.floatValue() / 2, 2);
     }
 
+    default Double spacingToPt(BigInteger spacing) {
+        return round(spacing.doubleValue() / 20, 2);
+    }
+
     default Double twipsToCm(BigInteger twips) {
         return round(twips.floatValue() / 567, 2);
     }

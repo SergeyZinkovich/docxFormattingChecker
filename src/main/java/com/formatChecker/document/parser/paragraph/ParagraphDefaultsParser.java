@@ -9,6 +9,7 @@ public class ParagraphDefaultsParser extends ParagraphParser implements Paragrap
     static final Double DEFAULT_SPACING_BEFORE = 0.0;
     static final Double DEFAULT_SPACING_AFTER = 0.0;
     static final Double DEFAULT_INDENT = 0.0;
+    static final Double DEFAULT_CHARACTER_SPACING = 0.0;
 
     public ParagraphDefaultsParser(DocDefaults docDefaults) {
         super(docDefaults);
@@ -27,6 +28,7 @@ public class ParagraphDefaultsParser extends ParagraphParser implements Paragrap
             paragraph.setLineSpacing(DEFAULT_LINE_SPACING);
             paragraph.setSpacingBefore(DEFAULT_SPACING_BEFORE);
             paragraph.setSpacingAfter(DEFAULT_SPACING_AFTER);
+            paragraph.setCharacterSpacing(DEFAULT_CHARACTER_SPACING);
         } else {
             setAlignment();
 
@@ -37,6 +39,7 @@ public class ParagraphDefaultsParser extends ParagraphParser implements Paragrap
             setLineSpacing();
             setSpacingBefore();
             setSpacingAfter();
+            setCharacterSpacing();
         }
 
         return paragraph;
@@ -83,5 +86,11 @@ public class ParagraphDefaultsParser extends ParagraphParser implements Paragrap
     public void setSpacingAfter() {
         Double lineSpacing = getSpacingAfter(getSpacing(paragraphProperties));
         paragraph.setSpacingAfter(lineSpacing != null ? lineSpacing : ParagraphDefaultsParser.DEFAULT_SPACING_BEFORE);
+    }
+
+    @Override
+    public void setCharacterSpacing() {
+        Double characterSpacing = getCharacterSpacing(paragraphProperties);
+        paragraph.setCharacterSpacing(characterSpacing != null ? characterSpacing : ParagraphDefaultsParser.DEFAULT_CHARACTER_SPACING);
     }
 }
