@@ -1,0 +1,12 @@
+{
+    "styles": {
+        "test": {
+            "paragraphs": [1],
+            "paragraphProperties": {
+            },
+            "runProperties": {
+				"vertAlign": "subscript"
+            }
+        }
+    }
+}

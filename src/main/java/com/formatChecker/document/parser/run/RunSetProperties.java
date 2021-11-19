@@ -16,5 +16,7 @@ public interface RunSetProperties extends ValuesConverter {
 
     void setUnderline();
 
+    void setVertAlign();
+
     void setTextColor();
 }

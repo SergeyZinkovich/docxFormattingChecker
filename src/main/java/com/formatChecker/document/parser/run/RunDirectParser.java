@@ -45,6 +45,7 @@ public class RunDirectParser extends RunParser implements RunSetProperties, RunH
         setItalic();
         setStrikethrough();
         setUnderline();
+        setVertAlign();
         setTextColor();
 
         return run;
@@ -114,6 +115,15 @@ public class RunDirectParser extends RunParser implements RunSetProperties, RunH
             underline = styleRun != null ? styleRun.getUnderline() : defaultRun.getUnderline();
         }
         run.setUnderline(underline);
+    }
+
+    @Override
+    public void setVertAlign() {
+        String vertAlign = getVertAlign(runProperties);
+        if (vertAlign == null) {
+            vertAlign = styleRun != null ? styleRun.getVertAlign() : defaultRun.getVertAlign();
+        }
+        run.setVertAlign(vertAlign);
     }
 
     @Override

@@ -46,6 +46,11 @@ public class RunDiffer implements Differ {
                 expectedRun.getUnderline(),
                 "underline"));
 
+        runDifference.setVertAlign(checkStringParameter(
+                actualRun.getVertAlign(),
+                expectedRun.getVertAlign(),
+                "vertical align"));
+
         runDifference.setTextColor(checkStringParameter(
                 actualRun.getTextColor(),
                 expectedRun.getTextColor(),

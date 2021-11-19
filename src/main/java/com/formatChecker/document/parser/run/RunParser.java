@@ -84,6 +84,22 @@ public abstract class RunParser implements ValuesConverter {
         }
     }
 
+    String getVertAlign(RPr runProperties) {
+        if (runProperties == null)
+            return null;
+        else {
+            CTVerticalAlignRun vertAlign = runProperties.getVertAlign();
+
+            if (vertAlign == null)
+                return null;
+
+            if (vertAlign.getVal() == null)
+                return null;
+
+            return vertAlign.getVal().value();
+        }
+    }
+
     String getTextColor(RPr runProperties) {
         if (runProperties == null)
             return null;

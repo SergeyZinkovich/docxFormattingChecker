@@ -11,6 +11,7 @@ public class RunDefaultsParser extends RunParser implements RunSetProperties {
     static final String DEFAULT_TEXT_COLOR = "000000";
     static final String DEFAULT_UNDERLINE = "none";
     static final Boolean DEFAULT_BOOL_VALUE = false;
+    static final String DEFAULT_VERT_ALIGN = "none";
 
 
     public RunDefaultsParser(DocDefaults docDefaults, ThemePart themePart) {
@@ -35,6 +36,7 @@ public class RunDefaultsParser extends RunParser implements RunSetProperties {
             setBold();
             setStrikethrough();
             setUnderline();
+            setVertAlign();
             setTextColor();
         }
 
@@ -75,6 +77,12 @@ public class RunDefaultsParser extends RunParser implements RunSetProperties {
     public void setUnderline() {
         String underline = getUnderline(runProperties);
         run.setUnderline(underline != null ? underline : DEFAULT_UNDERLINE);
+    }
+
+    @Override
+    public void setVertAlign() {
+        String vertAlign = getVertAlign(runProperties);
+        run.setVertAlign(vertAlign != null ? vertAlign : DEFAULT_VERT_ALIGN);
     }
 
     @Override

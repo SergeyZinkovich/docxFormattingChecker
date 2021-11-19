@@ -312,6 +312,9 @@ public class DifferResultCollector {
             if (r.getUnderline() != null)
                 result.add(r.getUnderline() + "\n\t");
 
+            if (r.getVertAlign() != null)
+                result.add(r.getVertAlign() + "\n\t");
+
             if (r.getTextColor() != null)
                 result.add(r.getTextColor() + "\n\t");
         }

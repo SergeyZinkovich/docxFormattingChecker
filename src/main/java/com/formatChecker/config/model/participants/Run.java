@@ -11,6 +11,8 @@ public class Run<T, D> {
     T strikethrough;
 
     String underline;
+
+    String vertAlign;
     String textColor;
 
     public void setText(String text) {
@@ -39,6 +41,10 @@ public class Run<T, D> {
 
     public void setUnderline(String underline) {
         this.underline = underline;
+    }
+
+    public void setVertAlign(String vertAlign) {
+        this.vertAlign = vertAlign;
     }
 
     public void setTextColor(String textColor) {
@@ -71,6 +77,10 @@ public class Run<T, D> {
 
     public String getUnderline() {
         return underline;
+    }
+
+    public String getVertAlign() {
+        return vertAlign;
     }
 
     public String getTextColor() {
