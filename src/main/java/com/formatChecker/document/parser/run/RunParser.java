@@ -41,6 +41,19 @@ public abstract class RunParser implements ValuesConverter {
         }
     }
 
+    Double getCharacterSpacing(RPr runProperties) {
+        if (runProperties == null)
+            return null;
+        else {
+            CTSignedTwipsMeasure characterSpacing = runProperties.getSpacing();
+
+            if (characterSpacing == null)
+                return null;
+
+            return spacingToPt(characterSpacing.getVal());
+        }
+    }
+
     Boolean getBold(RPr runProperties) {
         if (runProperties == null)
             return null;

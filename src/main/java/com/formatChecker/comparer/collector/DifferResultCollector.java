@@ -284,9 +284,6 @@ public class DifferResultCollector {
         if (paragraph.getPageBreakBefore() != null)
             paragraphResult += paragraph.getPageBreakBefore() + "\n\t";
 
-        if (paragraph.getCharacterSpacing() != null)
-            paragraphResult += paragraph.getCharacterSpacing() + "\n\t";
-
         return paragraphResult;
     }
 
@@ -317,6 +314,9 @@ public class DifferResultCollector {
 
             if (r.getTextColor() != null)
                 result.add(r.getTextColor() + "\n\t");
+
+            if (r.getCharacterSpacing() != null)
+                result.add(r.getCharacterSpacing() + "\n\t");
         }
 
         return String.join("", result);

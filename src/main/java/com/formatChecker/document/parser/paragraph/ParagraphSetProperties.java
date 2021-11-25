@@ -16,6 +16,4 @@ public interface ParagraphSetProperties extends ValuesConverter {
     void setSpacingBefore();
 
     void setSpacingAfter();
-
-    void setCharacterSpacing();
 }

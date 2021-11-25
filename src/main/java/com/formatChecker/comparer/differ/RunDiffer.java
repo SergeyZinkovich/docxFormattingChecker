@@ -56,6 +56,12 @@ public class RunDiffer implements Differ {
                 expectedRun.getTextColor(),
                 "text color"));
 
+        runDifference.setCharacterSpacing(checkDoubleParameter(
+                actualRun.getCharacterSpacing(),
+                expectedRun.getCharacterSpacing(),
+                "character spacing", "pt"
+        ));
+
         return runDifference;
     }
 

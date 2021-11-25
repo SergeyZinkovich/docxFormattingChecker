@@ -1,6 +1,7 @@
 package com.formatChecker.document.parser.run;
 
 import com.formatChecker.config.model.participants.Run;
+import com.formatChecker.document.parser.paragraph.ParagraphDefaultsParser;
 import org.docx4j.openpackaging.exceptions.Docx4JException;
 import org.docx4j.openpackaging.parts.ThemePart;
 import org.docx4j.wml.DocDefaults;
@@ -12,7 +13,7 @@ public class RunDefaultsParser extends RunParser implements RunSetProperties {
     static final String DEFAULT_UNDERLINE = "none";
     static final Boolean DEFAULT_BOOL_VALUE = false;
     static final String DEFAULT_VERT_ALIGN = "none";
-
+    static final Double DEFAULT_CHARACTER_SPACING = 0.0;
 
     public RunDefaultsParser(DocDefaults docDefaults, ThemePart themePart) {
         super(docDefaults, themePart);
@@ -24,6 +25,7 @@ public class RunDefaultsParser extends RunParser implements RunSetProperties {
         if (runProperties == null) {
             run.setFontFamily(DEFAULT_FONT_FAMILY);
             run.setFontSize(DEFAULT_FONT_SIZE);
+            run.setCharacterSpacing(DEFAULT_CHARACTER_SPACING);
             run.setItalic(DEFAULT_BOOL_VALUE);
             run.setBold(DEFAULT_BOOL_VALUE);
             run.setStrikethrough(DEFAULT_BOOL_VALUE);
@@ -32,6 +34,7 @@ public class RunDefaultsParser extends RunParser implements RunSetProperties {
         } else {
             setFontFamily();
             setFontSize();
+            setCharacterSpacing();
             setItalic();
             setBold();
             setStrikethrough();
@@ -53,6 +56,12 @@ public class RunDefaultsParser extends RunParser implements RunSetProperties {
     public void setFontSize() {
         Double fontSize = getFontSize(runProperties);
         run.setFontSize(fontSize != null ? fontSize : DEFAULT_FONT_SIZE);
+    }
+
+    @Override
+    public void setCharacterSpacing() {
+        Double characterSpacing = getCharacterSpacing(runProperties);
+        run.setCharacterSpacing(characterSpacing != null ? characterSpacing : RunDefaultsParser.DEFAULT_CHARACTER_SPACING);
     }
 
     @Override

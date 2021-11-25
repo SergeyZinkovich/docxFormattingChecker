@@ -25,7 +25,6 @@ public class Paragraph<T, D> {
     T lineSpacing;
     T spacingBefore;
     T spacingAfter;
-    T characterSpacing;
 
     public void addRun(Run run) {
         runs.add(run);
@@ -79,10 +78,6 @@ public class Paragraph<T, D> {
         this.id = id;
     }
 
-    public void setCharacterSpacing(T characterSpacing) {
-        this.characterSpacing = characterSpacing;
-    }
-
     public String getAlignment() {
         return alignment;
     }
@@ -125,9 +120,5 @@ public class Paragraph<T, D> {
 
     public D getPageBreakBefore() {
         return pageBreakBefore;
-    }
-
-    public T getCharacterSpacing() {
-        return characterSpacing;
     }
 }

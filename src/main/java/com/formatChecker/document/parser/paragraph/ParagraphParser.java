@@ -103,13 +103,6 @@ public abstract class ParagraphParser implements ValuesConverter {
         }
     }
 
-    Double getCharacterSpacing(PPr paragraphProperties) {
-        if (paragraphProperties == null)
-            return null;
-        else
-            return spacingToPt(paragraphProperties.getRPr().getSpacing().getVal());
-    }
-
     Paragraph<Double, Boolean> getDefaultProperties(DocDefaults docDefaults) {
         return new ParagraphDefaultsParser(docDefaults).parseParagraph();
     }

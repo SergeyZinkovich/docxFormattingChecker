@@ -38,6 +38,7 @@ public class RunStyleParser extends RunParser implements RunSetProperties, Style
     public Run<Boolean, Double> parseRun() throws Docx4JException {
         setFontFamily();
         setFontSize();
+        setCharacterSpacing();
         setBold();
         setItalic();
         setStrikethrough();
@@ -82,6 +83,22 @@ public class RunStyleParser extends RunParser implements RunSetProperties, Style
         }
 
         run.setFontSize(fontSize);
+    }
+
+    @Override
+    public void setCharacterSpacing() {
+        Double characterSpacing = getCharacterSpacing(runProperties);
+
+        while (parentStyle != null && characterSpacing == null) {
+            characterSpacing = getCharacterSpacing(getRunProperties(parentStyle));
+            parentStyle = getParentStyle(parentStyle, styles);
+        }
+
+        if (characterSpacing == null) {
+            characterSpacing = defaultRun.getCharacterSpacing();
+        }
+
+        run.setCharacterSpacing(characterSpacing);
     }
 
     @Override

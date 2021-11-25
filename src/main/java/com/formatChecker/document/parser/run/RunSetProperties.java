@@ -8,6 +8,8 @@ public interface RunSetProperties extends ValuesConverter {
 
     void setFontSize();
 
+    void setCharacterSpacing();
+
     void setBold();
 
     void setItalic();

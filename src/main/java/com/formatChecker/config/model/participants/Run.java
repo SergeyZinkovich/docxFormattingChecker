@@ -5,6 +5,7 @@ public class Run<T, D> {
 
     String fontFamily;
     D fontSize;
+    D characterSpacing;
 
     T bold;
     T italic;
@@ -21,6 +22,10 @@ public class Run<T, D> {
 
     public void setFontFamily(String fontFamily) {
         this.fontFamily = fontFamily;
+    }
+
+    public void setCharacterSpacing(D characterSpacing) {
+        this.characterSpacing = characterSpacing;
     }
 
     public void setFontSize(D fontSize) {
@@ -61,6 +66,10 @@ public class Run<T, D> {
 
     public D getFontSize() {
         return fontSize;
+    }
+
+    public D getCharacterSpacing() {
+        return characterSpacing;
     }
 
     public T getBold() {

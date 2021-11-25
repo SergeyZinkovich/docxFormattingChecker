@@ -41,6 +41,7 @@ public class RunDirectParser extends RunParser implements RunSetProperties, RunH
 
         setFontFamily();
         setFontSize();
+        setCharacterSpacing();
         setBold();
         setItalic();
         setStrikethrough();
@@ -79,6 +80,16 @@ public class RunDirectParser extends RunParser implements RunSetProperties, RunH
             fontSize = styleRun != null ? styleRun.getFontSize() : defaultRun.getFontSize();
         }
         run.setFontSize(fontSize);
+    }
+
+    @Override
+    public void setCharacterSpacing() {
+        Double characterSpacing = getCharacterSpacing(runProperties);
+        if (characterSpacing == null) {
+            characterSpacing = styleRun != null ? styleRun.getCharacterSpacing() :
+                    defaultRun.getCharacterSpacing();
+        }
+        run.setCharacterSpacing(characterSpacing);
     }
 
     @Override

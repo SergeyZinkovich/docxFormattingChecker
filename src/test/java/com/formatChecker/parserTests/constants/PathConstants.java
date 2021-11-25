@@ -46,10 +46,10 @@ public class PathConstants {
     public static final String PARAGRAPH_COUNT_INCORRECT_DOCUMENT_PATH = "src/test/resources/comparerAndParserTests/" +
             "paragraphs_count/incorrect/document/document.docx";
 
-    public static final String PARAGRAPH_CHARACTER_SPACING_CONFIG_PATH = "src/test/resources/comparerAndParserTests/" +
-            "paragraph_properties/character_spacing/config/config.json";
-    public static final String PARAGRAPH_CHARACTER_SPACING_DOCUMENT_PATH = "src/test/resources/comparerAndParserTests/" +
-            "paragraph_properties/character_spacing/document/document.docx";
+    public static final String RUN_CHARACTER_SPACING_CONFIG_PATH = "src/test/resources/comparerAndParserTests/" +
+            "run_properties/character_spacing/config/config.json";
+    public static final String RUN_CHARACTER_SPACING_DOCUMENT_PATH = "src/test/resources/comparerAndParserTests/" +
+            "run_properties/character_spacing/document/document.docx";
 
     public static final String RUN_VERT_ALIGN_CONFIG_PATH = "src/test/resources/comparerAndParserTests/" +
             "run_properties/vert_align/config/config.json";
