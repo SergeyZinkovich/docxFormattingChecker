@@ -36,16 +36,16 @@ public class ParagraphTest {
 
         for (int i = 0; i < paragraph1.getRuns().size(); ++i) {
             Assertions.assertEquals(
-                    config.getStyles().get("style1").getRun().getFontFamily(),
+                    config.getStyles().get("style1").getParagraph().getRuns().get(0).getFontFamily(),
                     paragraph1.getRuns().get(i).getFontFamily());
 
             Assertions.assertEquals(
-                    config.getStyles().get("style1").getRun().getBold(),
+                    config.getStyles().get("style1").getParagraph().getRuns().get(0).getBold(),
                     paragraph1.getRuns().get(i).getBold());
         }
         for (int i = 0; i < paragraph2.getRuns().size(); ++i) {
             Assertions.assertEquals(
-                    config.getStyles().get("style2").getRun().getFontSize(),
+                    config.getStyles().get("style2").getParagraph().getRuns().get(0).getFontSize(),
                     paragraph2.getRuns().get(i).getFontSize());
         }
     }
@@ -81,16 +81,16 @@ public class ParagraphTest {
 
         for (int i = 0; i < headingParagraph.getRuns().size(); ++i) {
             Assertions.assertEquals(
-                    config.getStyles().get("heading1").getRun().getFontFamily(),
+                    config.getStyles().get("heading1").getParagraph().getRuns().get(0).getFontFamily(),
                     headingParagraph.getRuns().get(i).getFontFamily());
 
             Assertions.assertEquals(
-                    config.getStyles().get("heading1").getRun().getBold(),
+                    config.getStyles().get("heading1").getParagraph().getRuns().get(0).getBold(),
                     headingParagraph.getRuns().get(i).getBold());
         }
         for (int i = 0; i < bodyParagraph.getRuns().size(); ++i) {
             Assertions.assertEquals(
-                    config.getStyles().get("body").getRun().getFontSize(),
+                    config.getStyles().get("body").getParagraph().getRuns().get(0).getFontSize(),
                     bodyParagraph.getRuns().get(i).getFontSize());
         }
     }

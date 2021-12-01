@@ -2,15 +2,11 @@
     "styles": {
         "heading1": {
             "paragraphProperties": {
-            },
-            "runProperties": {
             }
         },
 
         "body": {
 		    "paragraphProperties": {
-            },
-            "runProperties": {
             }
         }
     },

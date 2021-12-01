@@ -11,18 +11,11 @@ public class Style {
     @SerializedName("paragraphProperties")
     Paragraph<Double, Boolean> paragraph;
 
-    @SerializedName("runProperties")
-    Run<Boolean, Double> run;
-
     public List<Integer> getParagraphIndexes() {
         return paragraphIndexes;
     }
 
     public Paragraph<Double, Boolean> getParagraph() {
         return paragraph;
-    }
-
-    public Run<Boolean, Double> getRun() {
-        return run;
     }
 }

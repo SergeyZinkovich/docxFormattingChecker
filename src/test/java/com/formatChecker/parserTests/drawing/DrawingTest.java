@@ -38,10 +38,11 @@ public class DrawingTest {
                     drawing.getDescription().getText().contains(
                             config.getDrawing().getTextStartsWith()));
 
-            for (Run run : drawing.getDescription().getRuns()) {
+            for (int i = 0; i < drawing.getDescription().getRuns().size(); i++) {
                 Assertions.assertEquals(
-                        config.getDrawing().getDescription().getRun().getFontSize(),
-                        run.getFontSize());
+                        config.getDrawing().getDescription().getParagraph().getRuns().get(0).getFontSize(),
+                        drawing.getDescription().getRuns().get(i).getFontSize()
+                );
             }
         }
     }

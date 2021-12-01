@@ -2,21 +2,25 @@
     "styles": {
         "heading1": {
             "paragraphProperties": {
-                "alignment": "center"
-            },
-            "runProperties": {
-                "fontFamily": "Comic Sans MS",
-                "bold": true
+                "alignment": "center",
+				"runs": [
+					{
+						"fontFamily": "Comic Sans MS",
+						"bold": true
+					}
+				]
             }
         },
 
         "body": {
             "paragraphProperties": {
-                "firstLineIndent": 1.25
-            },
-            "runProperties": {
-                "fontSize": 11
-            }
+                "firstLineIndent": 1.25,
+				"runs": [
+					{
+						"fontSize": 11
+					}
+				]
+			}
         }
     },
     "findHeadingsByTOC": true

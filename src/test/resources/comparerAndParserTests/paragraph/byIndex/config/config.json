@@ -3,21 +3,25 @@
         "style1": {
             "paragraphs": [1],
             "paragraphProperties": {
-                "alignment": "center"
-            },
-            "runProperties": {
-                "fontFamily": "Comic Sans MS",
-                "bold": true
+                "alignment": "center",
+				"runs": [
+					{
+						"fontFamily": "Comic Sans MS",
+						"bold": true
+					}
+				]
             }
         },
 
         "style2": {
             "paragraphs": [2],
             "paragraphProperties": {
-                "firstLineIndent": 1.25
-            },
-            "runProperties": {
-                "fontSize": 11
+                "firstLineIndent": 1.25,
+				"runs": [
+					{
+						"fontSize": 11
+					}
+				]
             }
         }
     }

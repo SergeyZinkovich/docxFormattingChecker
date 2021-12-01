@@ -40,11 +40,22 @@ public class DrawingDiffer {
                     expectedDrawing.getDescription().getParagraph())
                     .getParagraphDifference());
 
-            for (Run<Boolean, Double> run : actualDrawing.getDescription().getRuns()) {
-                drawing.getDescription().addRun(new RunDiffer(
-                        run,
-                        expectedDrawing.getDescription().getRun())
-                        .getRunDifference());
+            for (int i = 0; i < actualDrawing.getDescription().getRuns().size(); i++) {
+                Run<Boolean, Double> expectedRun = new Run<>();
+                if (expectedDrawing.getDescription().getParagraph().getRuns().size() > i) {
+                    expectedRun = expectedDrawing.getDescription().getParagraph().getRuns().get(i);
+                } else if (expectedDrawing.getDescription().getParagraph().getRuns().size() > 0) {
+                    expectedRun = expectedDrawing.getDescription().getParagraph().getRuns().get(
+                            expectedDrawing.getDescription().getParagraph().getRuns().size() - 1
+                    );
+                }
+
+                drawing.getDescription().addRun(
+                        new RunDiffer(
+                                actualDrawing.getDescription().getRuns().get(i),
+                                expectedRun
+                        ).getRunDifference()
+                );
             }
 
             return drawing;

@@ -3,8 +3,6 @@
         "test": {
             "paragraphs": [1, 2, 3],
             "paragraphProperties": {
-            },
-            "runProperties": {
             }
         }
     },
@@ -15,10 +13,12 @@
         },
         "description": {
             "paragraphProperties": {
-                "alignment": "center"
-            },
-            "runProperties": {
-                "fontSize": 14
+                "alignment": "center",
+				"runs": [
+					{
+						"fontSize": 14
+					}
+				]
             }
         }
     }

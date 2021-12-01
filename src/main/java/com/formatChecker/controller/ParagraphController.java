@@ -76,6 +76,7 @@ public class ParagraphController implements RunHelper {
 
     public void parseParagraph() {
         docxDocument.addParagraph(actualParagraph);
+        expectedParagraph = new Paragraph<>();
 
         if (configStyles == null) {
             if (actualParagraph.getHeadingLevel() > 0) {
@@ -84,7 +85,7 @@ public class ParagraphController implements RunHelper {
             } else {
                 expectedParagraph = config.getStyles().get(BODY_STYLE_NAME).getParagraph();
             }
-        } else {
+        } else if (configStyles.get(index) != null) {
             expectedParagraph = config.getStyles().get(configStyles.get(index)).getParagraph();
         }
 
@@ -109,7 +110,7 @@ public class ParagraphController implements RunHelper {
                     ++count;
 
                     Run<Boolean, Double> actualRun = (Run<Boolean, Double>) actualParagraph.getRuns().get(count - 1);
-                    new RunController(index, r, actualRun, differenceParagraph, configStyles,
+                    new RunController(index, count-1, r, actualRun, differenceParagraph, configStyles,
                             actualParagraph.getHeadingLevel(), config, shouldFix).parseRun();
                 }
             }

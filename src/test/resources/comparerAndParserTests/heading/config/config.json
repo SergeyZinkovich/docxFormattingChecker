@@ -2,26 +2,18 @@
     "styles": {
         "heading1": {
             "paragraphProperties": {
-            },
-            "runProperties": {
             }
         },
         "heading2": {
             "paragraphProperties": {
-            },
-            "runProperties": {
             }
         },
         "heading3": {
             "paragraphProperties": {
-            },
-            "runProperties": {
             }
         },
         "body": {
             "paragraphProperties": {
-            },
-            "runProperties": {
             }
         }
     },
