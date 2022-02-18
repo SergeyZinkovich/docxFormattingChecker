@@ -1,6 +1,7 @@
 package com.formatChecker.controller;
 
 import com.formatChecker.comparer.differ.ParagraphDiffer;
+import com.formatChecker.comparer.differ.RunsCountDiffer;
 import com.formatChecker.comparer.model.Difference;
 import com.formatChecker.comparer.model.participants.HeadingsList;
 import com.formatChecker.config.model.Config;
@@ -95,7 +96,6 @@ public class ParagraphController implements RunHelper {
     void compareParagraph() {
         Paragraph<String, String> differenceParagraph = new ParagraphDiffer(actualParagraph, expectedParagraph)
                 .getParagraphDifference();
-        difference.addParagraph(differenceParagraph);
 
         if (shouldFix) {
             new ParagraphFixer(documentParagraph, actualParagraph, expectedParagraph, differenceParagraph)
@@ -115,5 +115,8 @@ public class ParagraphController implements RunHelper {
                 }
             }
         }
+
+        differenceParagraph.setMinRunsCount(new RunsCountDiffer(count, expectedParagraph.getMinRunsCount(), expectedParagraph.getMaxRunsCount()).getDifference());
+        difference.addParagraph(differenceParagraph);
     }
 }

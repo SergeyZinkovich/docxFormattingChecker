@@ -13,6 +13,9 @@ public class Paragraph<T, D> {
 
     String text;
 
+    T maxRunsCount;
+    T minRunsCount;
+
     Integer headingLevel;
     D pageBreakBefore;
 
@@ -70,6 +73,14 @@ public class Paragraph<T, D> {
         this.pageBreakBefore = pageBreakBefore;
     }
 
+    public void setMaxRunsCount(T maxRunsCount) {
+        this.maxRunsCount = maxRunsCount;
+    }
+
+    public void setMinRunsCount(T minRunsCount) {
+        this.minRunsCount = minRunsCount;
+    }
+
     public String getId() {
         return id;
     }
@@ -120,5 +131,13 @@ public class Paragraph<T, D> {
 
     public D getPageBreakBefore() {
         return pageBreakBefore;
+    }
+
+    public T getMaxRunsCount() {
+        return maxRunsCount;
+    }
+
+    public T getMinRunsCount() {
+        return minRunsCount;
     }
 }

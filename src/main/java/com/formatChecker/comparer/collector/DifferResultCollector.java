@@ -284,6 +284,9 @@ public class DifferResultCollector {
         if (paragraph.getPageBreakBefore() != null)
             paragraphResult += paragraph.getPageBreakBefore() + "\n\t";
 
+        if (paragraph.getMinRunsCount() != null)
+            paragraphResult += paragraph.getMinRunsCount() + "\n\t";
+
         return paragraphResult;
     }
 

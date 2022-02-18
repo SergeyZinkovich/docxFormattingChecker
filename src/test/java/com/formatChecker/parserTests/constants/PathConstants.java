@@ -55,4 +55,14 @@ public class PathConstants {
             "run_properties/vert_align/config/config.json";
     public static final String RUN_VERT_ALIGN_DOCUMENT_PATH = "src/test/resources/comparerAndParserTests/" +
             "run_properties/vert_align/document/document.docx";
+
+    public static final String RUNS_COUNT_CORRECT_CONFIG_PATH = "src/test/resources/comparerAndParserTests/" +
+            "paragraph_properties/runs_count/correct/config/config.json";
+    public static final String RUNS_COUNT_CORRECT_DOCUMENT_PATH = "src/test/resources/comparerAndParserTests/" +
+            "paragraph_properties/runs_count/correct/document/document.docx";
+
+    public static final String RUNS_COUNT_INCORRECT_CONFIG_PATH = "src/test/resources/comparerAndParserTests/" +
+            "paragraph_properties/runs_count/incorrect/config/config.json";
+    public static final String RUNS_COUNT_INCORRECT_DOCUMENT_PATH = "src/test/resources/comparerAndParserTests/" +
+            "paragraph_properties/runs_count/incorrect/document/document.docx";
 }

@@ -59,6 +59,11 @@ public class RunController {
             expectedStyle = config.getStyles().get(configStyles.get(paragraphIndex));
         }
 
+        if (expectedStyle == null) {
+            differenceParagraph.addRun(new Run<String, String>());
+            return;
+        }
+
         if (expectedStyle.getParagraph().getRuns() != null && expectedStyle.getParagraph().getRuns().size() > 0) {
             if (expectedStyle.getParagraph().getRuns().size() > runIndex) {
                 expectedRun = expectedStyle.getParagraph().getRuns().get(runIndex);
