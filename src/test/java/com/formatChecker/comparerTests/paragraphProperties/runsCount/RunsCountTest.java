@@ -1,4 +1,4 @@
-package com.formatChecker.comparerTests.paragraph_properties.runs_count;
+package com.formatChecker.comparerTests.paragraphProperties.runsCount;
 
 import com.formatChecker.comparer.collector.DifferResultCollector;
 import com.formatChecker.controller.DocumentController;

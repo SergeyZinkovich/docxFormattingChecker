@@ -37,32 +37,32 @@ public class PathConstants {
             "drawing/document/document.docx";
 
     public static final String PARAGRAPH_COUNT_CORRECT_CONFIG_PATH = "src/test/resources/comparerAndParserTests/" +
-            "paragraphs_count/correct/config/config.json";
+            "paragraphsCount/correct/config/config.json";
     public static final String PARAGRAPH_COUNT_CORRECT_DOCUMENT_PATH = "src/test/resources/comparerAndParserTests/" +
-            "paragraphs_count/correct/document/document.docx";
+            "paragraphsCount/correct/document/document.docx";
 
     public static final String PARAGRAPH_COUNT_INCORRECT_CONFIG_PATH = "src/test/resources/comparerAndParserTests/" +
-            "paragraphs_count/incorrect/config/config.json";
+            "paragraphsCount/incorrect/config/config.json";
     public static final String PARAGRAPH_COUNT_INCORRECT_DOCUMENT_PATH = "src/test/resources/comparerAndParserTests/" +
-            "paragraphs_count/incorrect/document/document.docx";
+            "paragraphsCount/incorrect/document/document.docx";
 
     public static final String RUN_CHARACTER_SPACING_CONFIG_PATH = "src/test/resources/comparerAndParserTests/" +
-            "run_properties/character_spacing/config/config.json";
+            "runProperties/characterSpacing/config/config.json";
     public static final String RUN_CHARACTER_SPACING_DOCUMENT_PATH = "src/test/resources/comparerAndParserTests/" +
-            "run_properties/character_spacing/document/document.docx";
+            "runProperties/characterSpacing/document/document.docx";
 
     public static final String RUN_VERT_ALIGN_CONFIG_PATH = "src/test/resources/comparerAndParserTests/" +
-            "run_properties/vert_align/config/config.json";
+            "runProperties/vertAlign/config/config.json";
     public static final String RUN_VERT_ALIGN_DOCUMENT_PATH = "src/test/resources/comparerAndParserTests/" +
-            "run_properties/vert_align/document/document.docx";
+            "runProperties/vertAlign/document/document.docx";
 
     public static final String RUNS_COUNT_CORRECT_CONFIG_PATH = "src/test/resources/comparerAndParserTests/" +
-            "paragraph_properties/runs_count/correct/config/config.json";
+            "paragraphProperties/runsCount/correct/config/config.json";
     public static final String RUNS_COUNT_CORRECT_DOCUMENT_PATH = "src/test/resources/comparerAndParserTests/" +
-            "paragraph_properties/runs_count/correct/document/document.docx";
+            "paragraphProperties/runsCount/correct/document/document.docx";
 
     public static final String RUNS_COUNT_INCORRECT_CONFIG_PATH = "src/test/resources/comparerAndParserTests/" +
-            "paragraph_properties/runs_count/incorrect/config/config.json";
+            "paragraphProperties/runsCount/incorrect/config/config.json";
     public static final String RUNS_COUNT_INCORRECT_DOCUMENT_PATH = "src/test/resources/comparerAndParserTests/" +
-            "paragraph_properties/runs_count/incorrect/document/document.docx";
+            "paragraphProperties/runsCount/incorrect/document/document.docx";
 }
