@@ -34,6 +34,9 @@ See examples of `config.json` in `src/test/resources`
 - `requiredHeadings[]`
   - level - int
   - text -string
+- `paragraphsCount`
+  - min - int
+  - max - int
 - findHeadingsByTOC - bool
 - generateNewDocument - bool
 
@@ -42,7 +45,6 @@ See examples of `config.json` in `src/test/resources`
 - `style`  
   - paragraphs[] - int
   - paragraphProperties - `paragraph`
-  - runProperties - `run`
   
 - `paragraph`
   - paragraphs[] - int
@@ -55,6 +57,8 @@ See examples of `config.json` in `src/test/resources`
   - spacingBefore - double
   - spacingAfter - double
   - pageBreakBefore - bool
+  - maxRunsCount - int
+    minRunsCount - int
 
 - `run`
   - fontFamily - string
@@ -64,3 +68,5 @@ See examples of `config.json` in `src/test/resources`
   - strikethrough - bool
   - underline - string
   - textColor - string
+  - characterSpacing - double(positive or negative)
+  - vertAlign - string(subscript/superscript)
