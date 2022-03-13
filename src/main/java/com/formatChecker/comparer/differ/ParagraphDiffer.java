@@ -16,7 +16,10 @@ public class ParagraphDiffer implements Differ {
     Paragraph<String, String> getDifference() {
         Paragraph<String, String> paragraphDifference = new Paragraph<>();
 
-        paragraphDifference.setText(actualParagraph.getText());
+        paragraphDifference.setText(checkTextParameter(
+                actualParagraph.getText(),
+                expectedParagraph.getText(),
+                "text"));
 
         paragraphDifference.setAlignment(checkStringParameter(
                 actualParagraph.getAlignment(),

@@ -35,4 +35,16 @@ public interface Differ {
             }
         }
     }
+
+    default String checkTextParameter(String actualParameter, String expectedParameter, String parameterName) {
+        if (expectedParameter == null) {
+            return null;
+        }
+
+        if (actualParameter.matches(expectedParameter)) {
+            return null;
+        } else {
+            return String.format("%s from %s don't matches %s", parameterName, actualParameter, expectedParameter);
+        }
+    }
 }

@@ -65,4 +65,9 @@ public class PathConstants {
             "paragraphProperties/runsCount/incorrect/config/config.json";
     public static final String RUNS_COUNT_INCORRECT_DOCUMENT_PATH = "src/test/resources/comparerAndParserTests/" +
             "paragraphProperties/runsCount/incorrect/document/document.docx";
+
+    public static final String PARAGRAPH_TEXT_CONFIG_PATH = "src/test/resources/comparerAndParserTests/" +
+            "paragraphProperties/text/config/config.json";
+    public static final String PARAGRAPH_TEXT_DOCUMENT_PATH = "src/test/resources/comparerAndParserTests/" +
+            "paragraphProperties/text/document/document.docx";
 }

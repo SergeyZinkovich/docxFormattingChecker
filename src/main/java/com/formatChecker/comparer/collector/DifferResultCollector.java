@@ -248,8 +248,8 @@ public class DifferResultCollector {
                 ++paragraphErrors;
 
                 result
-                        .append(String.format("\nParagraph #%d (%s...): \n\t",
-                                count, text.substring(0, Math.min(text.length(), 100))))
+                        .append(String.format("\nParagraph #%d: \n\t",
+                                count))
                         .append(paragraphDifference);
             }
         }
@@ -259,6 +259,9 @@ public class DifferResultCollector {
 
     String getParagraphDifferenceAsString(Paragraph<String, String> paragraph) {
         String paragraphResult = "";
+
+        if (paragraph.getText() != null)
+            paragraphResult += paragraph.getText().substring(0, Math.min(paragraph.getText().length(), 100)) + "\n\t";
 
         if (paragraph.getAlignment() != null)
             paragraphResult += paragraph.getAlignment() + "\n\t";
