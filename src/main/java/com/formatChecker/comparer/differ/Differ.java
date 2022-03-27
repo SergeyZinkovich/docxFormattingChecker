@@ -44,7 +44,7 @@ public interface Differ {
         if (actualParameter.matches(expectedParameter)) {
             return null;
         } else {
-            return String.format("%s from %s don't matches %s", parameterName, actualParameter, expectedParameter);
+            return String.format("%s from \"%s\" don't matches \"%s\"", parameterName, actualParameter.substring(0, Math.min(actualParameter.length(), 100)), expectedParameter.substring(0, Math.min(expectedParameter.length(), 100)));
         }
     }
 }

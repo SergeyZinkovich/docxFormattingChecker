@@ -261,7 +261,7 @@ public class DifferResultCollector {
         String paragraphResult = "";
 
         if (paragraph.getText() != null)
-            paragraphResult += paragraph.getText().substring(0, Math.min(paragraph.getText().length(), 100)) + "\n\t";
+            paragraphResult += paragraph.getText() + "\n\t";
 
         if (paragraph.getAlignment() != null)
             paragraphResult += paragraph.getAlignment() + "\n\t";
@@ -297,6 +297,9 @@ public class DifferResultCollector {
         Set<String> result = new HashSet<>();
 
         for (Run<String, String> r : runs) {
+            if (r.getText() != null)
+                result.add(r.getText() + "\n\t");
+
             if (r.getFontFamily() != null)
                 result.add(r.getFontFamily() + "\n\t");
 

@@ -70,4 +70,9 @@ public class PathConstants {
             "paragraphProperties/text/config/config.json";
     public static final String PARAGRAPH_TEXT_DOCUMENT_PATH = "src/test/resources/comparerAndParserTests/" +
             "paragraphProperties/text/document/document.docx";
+
+    public static final String RUNS_TEXT_CONFIG_PATH = "src/test/resources/comparerAndParserTests/" +
+            "runProperties/text/config/config.json";
+    public static final String RUNS_TEXT_DOCUMENT_PATH = "src/test/resources/comparerAndParserTests/" +
+            "runProperties/text/document/document.docx";
 }

@@ -1,0 +1,29 @@
+{
+    "styles": {
+        "test": {
+            "paragraphs": [2],
+            "paragraphProperties": {
+				"runs": [
+					{
+						"text": ".*adipiscing elit.*"
+					},
+					{
+						"text": ".*eu vestibulum est .*"
+					},
+					{
+						"text": ".*hendrerit id nulla id scelerisque.*"
+					},
+					{
+						"text": ".*lacinia tortor.*"
+					},
+					{
+						"text": ".*justo sit.*"
+					},
+					{
+						"text": ".*Nunc at mi.*"
+					}
+				]
+            }
+        }
+    }
+}

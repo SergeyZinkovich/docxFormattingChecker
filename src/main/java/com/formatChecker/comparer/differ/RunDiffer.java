@@ -16,6 +16,11 @@ public class RunDiffer implements Differ {
     Run<String, String> getDifference() {
         Run<String, String> runDifference = new Run<>();
 
+        runDifference.setText(checkTextParameter(
+                actualRun.getText(),
+                expectedRun.getText(),
+                "text"));
+
         runDifference.setFontFamily(checkStringParameter(
                 actualRun.getFontFamily(),
                 expectedRun.getFontFamily(),
