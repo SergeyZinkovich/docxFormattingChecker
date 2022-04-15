@@ -75,4 +75,14 @@ public class PathConstants {
             "runProperties/text/config/config.json";
     public static final String RUNS_TEXT_DOCUMENT_PATH = "src/test/resources/comparerAndParserTests/" +
             "runProperties/text/document/document.docx";
+
+    public static final String FILENAME_CORRECT_CONFIG_PATH = "src/test/resources/comparerAndParserTests/" +
+            "filename/correct/config/config.json";
+    public static final String FILENAME_CORRECT_DOCUMENT_PATH = "src/test/resources/comparerAndParserTests/" +
+            "filename/correct/document/document.docx";
+
+    public static final String FILENAME_INCORRECT_CONFIG_PATH = "src/test/resources/comparerAndParserTests/" +
+            "filename/incorrect/config/config.json";
+    public static final String FILENAME_INCORRECT_DOCUMENT_PATH = "src/test/resources/comparerAndParserTests/" +
+            "filename/incorrect/document/document.docx";
 }

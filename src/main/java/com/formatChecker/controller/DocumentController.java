@@ -1,5 +1,6 @@
 package com.formatChecker.controller;
 
+import com.formatChecker.comparer.differ.FilenameDiffer;
 import com.formatChecker.comparer.differ.PagesCountDiffer;
 import com.formatChecker.comparer.differ.HeadingDiffer;
 import com.formatChecker.comparer.differ.ParagraphsCountDiffer;
@@ -73,6 +74,7 @@ public class DocumentController {
     Difference getDocumentDifference() throws Exception {
         Difference difference = new Difference();
 
+        difference.setFilename(new FilenameDiffer(docxPath, config.getFilename()).getDifference());
         difference.setPages(new PagesCountDiffer(docxDocument.getPages(), config.getPages()).getDifference());
         difference.setHeadings(new HeadingDiffer(headings, configParser.getRequiredHeadings()).getHeadingsDifference());
 

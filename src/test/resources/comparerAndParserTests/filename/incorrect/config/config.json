@@ -1,0 +1,15 @@
+{
+    "styles": {
+        "heading1": {
+            "paragraphProperties": {
+            }
+        },
+
+        "body": {
+		    "paragraphProperties": {
+            }
+        }
+    },
+    "filename": ".*Диплом.*",
+	"findHeadingsByTOC": true
+}

@@ -15,6 +15,7 @@ public class Difference {
         this.sections = new ArrayList<>();
     }
 
+    String filename;
     String pages;
     String paragraphsCount;
 
@@ -23,6 +24,10 @@ public class Difference {
     Footer footer;
     DrawingsList drawings;
     HeadingsList headings;
+
+    public String getFilename() {
+        return filename;
+    }
 
     public void setPages(String pages) {
         this.pages = pages;
@@ -54,6 +59,10 @@ public class Difference {
 
     public DrawingsList getDrawings() {
         return drawings;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
     }
 
     public void setFooter(Footer footer) {

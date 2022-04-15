@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
 
 public class DifferResultCollector {
     Difference difference;
+    String filenameResult;
     String pagesResult;
     String paragraphsCountResult;
     String sectionResult;
@@ -34,6 +35,7 @@ public class DifferResultCollector {
     }
 
     public String collectDifferenceAsString() {
+        filenameResult = getFilenameDifferenceAsString();
         pagesResult = getPageDifferenceAsString();
         paragraphsCountResult = getParagraphsCountDifferenceAsString();
         sectionResult = getSectionDifferenceAsString();
@@ -42,7 +44,8 @@ public class DifferResultCollector {
         paragraphsResult = getParagraphsDifferenceAsString();
         drawingsResult = getDrawingsDifferenceAsString();
 
-        String totalResult = pagesResult +
+        String totalResult = filenameResult +
+                pagesResult +
                 paragraphsCountResult +
                 sectionResult +
                 footerResult +
@@ -68,9 +71,16 @@ public class DifferResultCollector {
         return total + section + drawing + footer + heading + paragraph + mostCommon + totalResult;
     }
 
+    String getFilenameDifferenceAsString() {
+        if (difference.getFilename() != null)
+            return String.format("\n\tFilename: %s", difference.getFilename());
+
+        return "";
+    }
+
     String getPageDifferenceAsString() {
         if (difference.getPages() != null)
-            return String.format("\n\nNumber of pages: %s", difference.getPages() + "\n");
+            return String.format("\n\nNumber of pages: %s", difference.getPages());
 
         return "";
     }

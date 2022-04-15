@@ -6,12 +6,12 @@ import java.util.HashMap;
 import java.util.List;
 
 public class Config {
+    String filename;
     Pages pages;
     ParagraphsCount paragraphsCount;
-
     Section<Double> section;
-    HashMap<String, Style> styles;
 
+    HashMap<String, Style> styles;
     Footer footer;
 
     ConfigDrawing drawing;
@@ -20,6 +20,10 @@ public class Config {
 
     Boolean findHeadingsByTOC = false;
     Boolean generateNewDocument = false;
+
+    public String getFilename() {
+        return filename;
+    }
 
     public Pages getPages() {
         return pages;

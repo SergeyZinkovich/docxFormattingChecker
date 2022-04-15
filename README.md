@@ -37,6 +37,7 @@ See examples of `config.json` in `src/test/resources`
 - `paragraphsCount`
   - min - int
   - max - int
+- filename - string(regexp)
 - findHeadingsByTOC - bool
 - generateNewDocument - bool
 
@@ -58,7 +59,8 @@ See examples of `config.json` in `src/test/resources`
   - spacingAfter - double
   - pageBreakBefore - bool
   - maxRunsCount - int
-    minRunsCount - int
+  - minRunsCount - int
+  - text - string(regexp)
 
 - `run`
   - fontFamily - string
@@ -70,3 +72,4 @@ See examples of `config.json` in `src/test/resources`
   - textColor - string
   - characterSpacing - double(positive or negative)
   - vertAlign - string(subscript/superscript)
+  - text - string(regexp)
