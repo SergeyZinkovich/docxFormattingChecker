@@ -1,6 +1,7 @@
 package com.formatChecker.config.model;
 
 import com.formatChecker.config.model.participants.*;
+import com.google.gson.annotations.SerializedName;
 
 import java.util.HashMap;
 import java.util.List;
@@ -17,6 +18,9 @@ public class Config {
     ConfigDrawing drawing;
 
     List<Heading> requiredHeadings;
+
+    @SerializedName("existence")
+    ExistenceConfig existenceConfig;
 
     Boolean findHeadingsByTOC = false;
     Boolean generateNewDocument = false;
@@ -55,6 +59,10 @@ public class Config {
 
     public List<Heading> getRequiredHeadings() {
         return requiredHeadings;
+    }
+
+    public ExistenceConfig getExistenceConfig() {
+        return existenceConfig;
     }
 
     public Boolean getGenerateNewDocument() {

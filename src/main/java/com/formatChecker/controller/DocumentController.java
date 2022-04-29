@@ -1,9 +1,6 @@
 package com.formatChecker.controller;
 
-import com.formatChecker.comparer.differ.FilenameDiffer;
-import com.formatChecker.comparer.differ.PagesCountDiffer;
-import com.formatChecker.comparer.differ.HeadingDiffer;
-import com.formatChecker.comparer.differ.ParagraphsCountDiffer;
+import com.formatChecker.comparer.differ.*;
 import com.formatChecker.comparer.model.Difference;
 import com.formatChecker.comparer.model.participants.HeadingsList;
 import com.formatChecker.config.model.Config;
@@ -139,6 +136,9 @@ public class DocumentController {
                 }
             }
         }
+
+        if (config.getExistenceConfig() != null)
+            difference.addExistenceConfig(new ExistenceConfigDifference(config.getExistenceConfig()).getDifferenceArray());
 
         this.ParagraphsCount = count;
 

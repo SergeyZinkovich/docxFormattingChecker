@@ -2,6 +2,7 @@ package com.formatChecker.comparer.model;
 
 import com.formatChecker.comparer.model.participants.DrawingsList;
 import com.formatChecker.comparer.model.participants.HeadingsList;
+import com.formatChecker.config.model.participants.ExistenceConfig;
 import com.formatChecker.config.model.participants.Footer;
 import com.formatChecker.config.model.participants.Paragraph;
 import com.formatChecker.config.model.participants.Section;
@@ -13,6 +14,7 @@ public class Difference {
     public Difference() {
         this.paragraphs = new ArrayList<>();
         this.sections = new ArrayList<>();
+        this.existenceConfig = new ArrayList<>();
     }
 
     String filename;
@@ -24,6 +26,8 @@ public class Difference {
     Footer footer;
     DrawingsList drawings;
     HeadingsList headings;
+
+    ArrayList<String> existenceConfig;
 
     public String getFilename() {
         return filename;
@@ -87,5 +91,13 @@ public class Difference {
 
     public void setDrawings(DrawingsList drawings) {
         this.drawings = drawings;
+    }
+
+    public ArrayList<String> getExistenceConfig() {
+        return existenceConfig;
+    }
+
+    public void addExistenceConfig(ArrayList<String> existenceConfig) {
+        this.existenceConfig.addAll(existenceConfig);
     }
 }

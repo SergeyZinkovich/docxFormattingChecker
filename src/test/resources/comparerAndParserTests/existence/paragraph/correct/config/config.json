@@ -1,0 +1,16 @@
+{
+    "styles": {
+        "test": {
+            "paragraphs": [],
+            "paragraphProperties": {
+            }
+        }
+    },
+	"existence": {
+		"paragraphs": [
+			{
+				"text": "exist"
+			}
+		]
+	}
+}

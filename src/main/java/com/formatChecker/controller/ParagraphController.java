@@ -1,5 +1,6 @@
 package com.formatChecker.controller;
 
+import com.formatChecker.comparer.collector.DifferResultCollector;
 import com.formatChecker.comparer.differ.ParagraphDiffer;
 import com.formatChecker.comparer.differ.RunsCountDiffer;
 import com.formatChecker.comparer.model.Difference;
@@ -22,6 +23,7 @@ import org.docx4j.wml.Styles;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 public class ParagraphController implements RunHelper {
     private static final String HEADING_STYLE_NAME = "heading";
@@ -90,14 +92,26 @@ public class ParagraphController implements RunHelper {
             expectedParagraph = config.getStyles().get(configStyles.get(index)).getParagraph();
         }
 
-        compareParagraph();
+        compareParagraph(expectedParagraph, false);
+
+        if (config.getExistenceConfig() != null) {
+            for (int i = 0; i < config.getExistenceConfig().getParagraphs().size(); i++) {
+                Difference diff = new Difference();
+                diff.addParagraph(compareParagraph(config.getExistenceConfig().getParagraphs().get(i), true));
+
+                if (Objects.equals(new DifferResultCollector(diff, "paragraph").getDifferenceAsString(), "")) {
+                    config.getExistenceConfig().getParagraphs().remove(i);
+                    break;
+                }
+            }
+        }
     }
 
-    void compareParagraph() {
+    Paragraph<String, String> compareParagraph(Paragraph<Double, Boolean> expectedParagraph, Boolean existenceCheck) {
         Paragraph<String, String> differenceParagraph = new ParagraphDiffer(actualParagraph, expectedParagraph)
                 .getParagraphDifference();
 
-        if (shouldFix) {
+        if (shouldFix && !existenceCheck) {
             new ParagraphFixer(documentParagraph, actualParagraph, expectedParagraph, differenceParagraph)
                     .fixParagraph();
         }
@@ -117,6 +131,11 @@ public class ParagraphController implements RunHelper {
         }
 
         differenceParagraph.setMinRunsCount(new RunsCountDiffer(count, expectedParagraph.getMinRunsCount(), expectedParagraph.getMaxRunsCount()).getDifference());
-        difference.addParagraph(differenceParagraph);
+
+        if (!existenceCheck) {
+            difference.addParagraph(differenceParagraph);
+        }
+
+        return differenceParagraph;
     }
 }

@@ -20,18 +20,28 @@ public class DifferResultCollector {
 
     StringBuilder drawingsResult;
     StringBuilder paragraphsResult;
+    StringBuilder existenceConfigResult;
 
     Integer sectionErrors;
     Integer drawingErrors;
     Integer footerErrors;
     Integer paragraphErrors;
     Integer headingErrors;
+    Integer existenceErrors;
 
     String differenceAsString;
 
     public DifferResultCollector(Difference difference) {
         this.difference = difference;
         this.differenceAsString = collectDifferenceAsString();
+    }
+
+    public DifferResultCollector(Difference difference, String mode) {
+        this.difference = difference;
+
+        if (Objects.equals(mode, "paragraph")) {
+            this.differenceAsString = getParagraphsDifferenceAsString().toString();
+        }
     }
 
     public String collectDifferenceAsString() {
@@ -42,6 +52,7 @@ public class DifferResultCollector {
         footerResult = getFooterDifferenceAsString();
         headingResult = getHeadingDifferenceAsString();
         paragraphsResult = getParagraphsDifferenceAsString();
+        existenceConfigResult = getExistenceConfigDifferenceAsString();
         drawingsResult = getDrawingsDifferenceAsString();
 
         String totalResult = filenameResult +
@@ -51,6 +62,7 @@ public class DifferResultCollector {
                 footerResult +
                 headingResult +
                 paragraphsResult +
+                existenceConfigResult +
                 drawingsResult;
 
         return totalResult.equals("") ?
@@ -66,9 +78,10 @@ public class DifferResultCollector {
         String footer = String.format("\n\tErrors in footer properties: %d", footerErrors);
         String heading = String.format("\n\tErrors in headings: %d", headingErrors);
         String paragraph = String.format("\n\tParagraphs with errors: %d", paragraphErrors);
+        String existence = String.format("\n\tMissing elements: %d", existenceErrors);
         String mostCommon = String.format("\n\tMost common error: %s", getMostCommonError(totalResult));
 
-        return total + section + drawing + footer + heading + paragraph + mostCommon + totalResult;
+        return total + section + drawing + footer + heading + paragraph + mostCommon + existence + totalResult;
     }
 
     String getFilenameDifferenceAsString() {
@@ -339,6 +352,18 @@ public class DifferResultCollector {
         }
 
         return String.join("", result);
+    }
+
+    public StringBuilder getExistenceConfigDifferenceAsString() {
+        StringBuilder result = new StringBuilder();
+        existenceErrors = 0;
+
+        for(String msg: difference.getExistenceConfig()) {
+            result.append(msg).append("\n\t");
+            existenceErrors++;
+        }
+
+        return result.toString().equals("") ? new StringBuilder() : new StringBuilder("\nExistence:\n\t" + result);
     }
 
     public String getMostCommonError(String p) {

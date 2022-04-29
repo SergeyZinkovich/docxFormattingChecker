@@ -37,6 +37,8 @@ See examples of `config.json` in `src/test/resources`
 - `paragraphsCount`
   - min - int
   - max - int
+- existence
+  - paragraphs[] - `paragraph`
 - filename - string(regexp)
 - findHeadingsByTOC - bool
 - generateNewDocument - bool
