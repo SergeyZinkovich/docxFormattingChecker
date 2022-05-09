@@ -1,6 +1,8 @@
 package com.formatChecker.controller;
 
+import com.formatChecker.comparer.collector.DifferResultCollector;
 import com.formatChecker.comparer.differ.RunDiffer;
+import com.formatChecker.comparer.model.Difference;
 import com.formatChecker.config.model.Config;
 import com.formatChecker.config.model.participants.Paragraph;
 import com.formatChecker.config.model.participants.Run;
@@ -9,6 +11,7 @@ import com.formatChecker.fixer.RunFixer;
 import org.docx4j.wml.R;
 
 import java.util.Map;
+import java.util.Objects;
 
 public class RunController {
     private static final String HEADING_STYLE_NAME = "heading";
@@ -59,6 +62,20 @@ public class RunController {
             expectedStyle = config.getStyles().get(configStyles.get(paragraphIndex));
         }
 
+        if (config.getExistenceConfig() != null && config.getExistenceConfig().getRuns() != null) {
+            for (int i = 0; i < config.getExistenceConfig().getRuns().size(); i++) {
+                Difference diff = new Difference();
+                Paragraph<String, String> paragraph = new Paragraph<>();
+                paragraph.addRun(compareRun(config.getExistenceConfig().getRuns().get(i), true));
+                diff.addParagraph(paragraph);
+
+                if (Objects.equals(new DifferResultCollector(diff, "run").getDifferenceAsString(), "")) {
+                    config.getExistenceConfig().getRuns().remove(i);
+                    break;
+                }
+            }
+        }
+
         if (expectedStyle == null) {
             differenceParagraph.addRun(new Run<String, String>());
             return;
@@ -71,16 +88,21 @@ public class RunController {
                 expectedRun = expectedStyle.getParagraph().getRuns().get(expectedStyle.getParagraph().getRuns().size()-1);
             }
 
-            compareRun();
+            compareRun(expectedRun, false);
         }
     }
 
-    void compareRun() {
+    Run<String, String> compareRun(Run<Boolean, Double> expectedRun, Boolean existenceCheck) {
         Run<String, String> differenceRun = new RunDiffer(actualRun, expectedRun).getRunDifference();
-        differenceParagraph.addRun(differenceRun);
 
-        if (shouldFix) {
+        if (shouldFix && !existenceCheck) {
             new RunFixer(this.documentRun, this.actualRun, expectedRun, differenceRun).fixRun();
         }
+
+        if (!existenceCheck) {
+            differenceParagraph.addRun(differenceRun);
+        }
+
+        return differenceRun;
     }
 }

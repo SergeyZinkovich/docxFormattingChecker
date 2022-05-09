@@ -41,6 +41,10 @@ public class DifferResultCollector {
 
         if (Objects.equals(mode, "paragraph")) {
             this.differenceAsString = getParagraphsDifferenceAsString().toString();
+        } else if (Objects.equals(mode, "run")) {
+            List<Paragraph<String, String>> paragraphs = difference.getParagraphs();
+            Paragraph p = paragraphs.get(0);
+            differenceAsString = getRunsDifferenceAsString(p.getRuns());
         }
     }
 

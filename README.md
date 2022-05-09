@@ -39,6 +39,7 @@ See examples of `config.json` in `src/test/resources`
   - max - int
 - existence
   - paragraphs[] - `paragraph`
+  - runs[] - `runs`
 - filename - string(regexp)
 - findHeadingsByTOC - bool
 - generateNewDocument - bool

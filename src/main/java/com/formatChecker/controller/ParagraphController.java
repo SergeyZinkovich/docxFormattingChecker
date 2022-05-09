@@ -94,7 +94,7 @@ public class ParagraphController implements RunHelper {
 
         compareParagraph(expectedParagraph, false);
 
-        if (config.getExistenceConfig() != null) {
+        if (config.getExistenceConfig() != null && config.getExistenceConfig().getParagraphs() != null) {
             for (int i = 0; i < config.getExistenceConfig().getParagraphs().size(); i++) {
                 Difference diff = new Difference();
                 diff.addParagraph(compareParagraph(config.getExistenceConfig().getParagraphs().get(i), true));
