@@ -1,0 +1,21 @@
+{
+    "styles": {
+        "test": {
+            "paragraphs": [],
+            "paragraphProperties": {
+            }
+        }
+    },
+	"existence": {
+	},
+	"numbering": [
+		{
+			"numberingLevels": [
+				{
+					"type": "bullet",
+					"text": ""
+				}
+			]
+		}
+	]
+}

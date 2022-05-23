@@ -105,4 +105,14 @@ public class PathConstants {
             "existence/run/incorrect/config/config.json";
     public static final String EXISTENCE_RUN_INCORRECT_DOCUMENT_PATH = "src/test/resources/comparerAndParserTests/" +
             "existence/run/incorrect/document/document.docx";
+
+    public static final String NUMBERING_CORRECT_CONFIG_PATH = "src/test/resources/comparerAndParserTests/" +
+            "numbering/correct/config/config.json";
+    public static final String NUMBERING_CORRECT_DOCUMENT_PATH = "src/test/resources/comparerAndParserTests/" +
+            "numbering/correct/document/document.docx";
+
+    public static final String NUMBERING_INCORRECT_CONFIG_PATH = "src/test/resources/comparerAndParserTests/" +
+            "numbering/incorrect/config/config.json";
+    public static final String NUMBERING_INCORRECT_DOCUMENT_PATH = "src/test/resources/comparerAndParserTests/" +
+            "numbering/incorrect/document/document.docx";
 }

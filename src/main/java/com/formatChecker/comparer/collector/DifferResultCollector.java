@@ -17,6 +17,7 @@ public class DifferResultCollector {
     String sectionResult;
     String footerResult;
     String headingResult;
+    String numberingResult;
 
     StringBuilder drawingsResult;
     StringBuilder paragraphsResult;
@@ -28,6 +29,7 @@ public class DifferResultCollector {
     Integer paragraphErrors;
     Integer headingErrors;
     Integer existenceErrors;
+    Integer numberingErrors;
 
     String differenceAsString;
 
@@ -58,6 +60,7 @@ public class DifferResultCollector {
         paragraphsResult = getParagraphsDifferenceAsString();
         existenceConfigResult = getExistenceConfigDifferenceAsString();
         drawingsResult = getDrawingsDifferenceAsString();
+        numberingResult = getNumberingDifferenceAsString();
 
         String totalResult = filenameResult +
                 pagesResult +
@@ -67,6 +70,7 @@ public class DifferResultCollector {
                 headingResult +
                 paragraphsResult +
                 existenceConfigResult +
+                numberingResult +
                 drawingsResult;
 
         return totalResult.equals("") ?
@@ -83,9 +87,10 @@ public class DifferResultCollector {
         String heading = String.format("\n\tErrors in headings: %d", headingErrors);
         String paragraph = String.format("\n\tParagraphs with errors: %d", paragraphErrors);
         String existence = String.format("\n\tMissing elements: %d", existenceErrors);
+        String numbering = String.format("\n\tNumbering errors: %d", numberingErrors);
         String mostCommon = String.format("\n\tMost common error: %s", getMostCommonError(totalResult));
 
-        return total + section + drawing + footer + heading + paragraph + mostCommon + existence + totalResult;
+        return total + section + drawing + footer + heading + paragraph + mostCommon + existence + numbering + totalResult;
     }
 
     String getFilenameDifferenceAsString() {
@@ -105,6 +110,15 @@ public class DifferResultCollector {
     String getParagraphsCountDifferenceAsString() {
         if (difference.getParagraphsCount() != null)
             return String.format("\n\tNumber of paragraphs: %s", difference.getParagraphsCount());
+
+        return "";
+    }
+
+    String getNumberingDifferenceAsString() {
+        if (difference.getNumbering() != null && !Objects.equals(difference.getNumbering(), "")) {
+            numberingErrors = difference.getNumbering().split("\n\t").length;
+            return String.format("\n\tNumbering: %s", difference.getNumbering());
+        }
 
         return "";
     }

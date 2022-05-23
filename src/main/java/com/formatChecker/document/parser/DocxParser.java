@@ -29,6 +29,7 @@ public class DocxParser {
     WordprocessingMLPackage wordprocessingMLPackage;
     DocxDocument document;
     DocumentData documentData;
+    Numbering numbering;
     List<SectPr> sectionsProperties;
     List<String> paragraphOnNewPageIds;
     HeadingsList headings;
@@ -39,6 +40,7 @@ public class DocxParser {
         this.wordprocessingMLPackage = wordprocessingMLPackage;
         this.headings = parseHeadings();
         this.documentData = parseDocumentData();
+        this.numbering = parseNumbering();
         this.document = parseDocument();
         this.sectionsProperties = parseSectionsProperties();
         this.paragraphOnNewPageIds = parseParagraphsOnNewPage();
@@ -65,6 +67,15 @@ public class DocxParser {
                 body.getContent(),
                 sections.get(0).getHeaderFooterPolicy()
         );
+    }
+
+    Numbering parseNumbering() {
+        if (wordprocessingMLPackage.getMainDocumentPart().getNumberingDefinitionsPart() != null) {
+            return wordprocessingMLPackage.getMainDocumentPart().getNumberingDefinitionsPart().getJaxbElement();
+        }
+        else {
+            return null;
+        }
     }
 
     DocxDocument parseDocument() {
@@ -191,6 +202,10 @@ public class DocxParser {
 
     public DocumentData getDocumentData() {
         return documentData;
+    }
+
+    public Numbering getNumbering() {
+        return numbering;
     }
 
     public List<SectPr> getSectionsProperties() {

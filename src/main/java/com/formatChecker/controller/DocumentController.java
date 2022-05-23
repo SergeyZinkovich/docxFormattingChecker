@@ -4,11 +4,13 @@ import com.formatChecker.comparer.differ.*;
 import com.formatChecker.comparer.model.Difference;
 import com.formatChecker.comparer.model.participants.HeadingsList;
 import com.formatChecker.config.model.Config;
+import com.formatChecker.config.model.participants.Numbering;
 import com.formatChecker.config.parser.ConfigParser;
 import com.formatChecker.document.model.DocxDocument;
 import com.formatChecker.document.model.data.DocumentData;
 import com.formatChecker.document.model.participants.raw.DrawingsRawList;
 import com.formatChecker.document.parser.DocxParser;
+import com.formatChecker.document.parser.numbering.NumberingDefinitionParser;
 import org.docx4j.Docx4J;
 import org.docx4j.openpackaging.exceptions.Docx4JException;
 import org.docx4j.openpackaging.packages.WordprocessingMLPackage;
@@ -21,6 +23,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -38,6 +41,8 @@ public class DocumentController {
 
     DocxParser docxParser;
     DocumentData documentData;
+    NumberingDefinitionParser numberingDefinitionParser;
+    HashMap<Integer, Numbering> numberings;
     List<SectPr> sectionsProperties;
     List<String> paragraphOnNewPageIds;
     DrawingsRawList paragraphsWithDrawings;
@@ -60,6 +65,8 @@ public class DocumentController {
         this.docxParser = new DocxParser(wordMLPackage);
         this.headings = configParser.getFindHeadingsByTOC() != null ? docxParser.getHeadings() : null;
         this.documentData = docxParser.getDocumentData();
+        this.numberingDefinitionParser = new NumberingDefinitionParser(docxParser.getNumbering());
+        this.numberings = numberingDefinitionParser.getNumberings();
         this.docxDocument = docxParser.getDocument();
         this.sectionsProperties = docxParser.getSectionsProperties();
         this.paragraphOnNewPageIds = docxParser.getParagraphOnNewPageIds();
@@ -79,6 +86,8 @@ public class DocumentController {
         runDrawingController(difference);
         runFooterController(difference);
         runParagraphController(difference);
+
+        difference.setNumbering(new NumberingDiffer(numberings, config.getNumbering()).getDifference());
 
         difference.setParagraphsCount(new ParagraphsCountDiffer(this.ParagraphsCount, config.getParagraphsCount()).getDifference());
 
@@ -130,7 +139,8 @@ public class DocumentController {
                                 config,
                                 configStyles,
                                 headings,
-                                paragraphOnNewPageIds)
+                                paragraphOnNewPageIds,
+                                numberings)
                                 .parseParagraph();
                     }
                 }

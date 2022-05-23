@@ -103,6 +103,22 @@ public abstract class ParagraphParser implements ValuesConverter {
         }
     }
 
+    Integer getNumId(PPr paragraphProperties) {
+        if (paragraphProperties != null && paragraphProperties.getNumPr() != null) {
+            return paragraphProperties.getNumPr().getNumId().getVal().intValue();
+        } else {
+            return null;
+        }
+    }
+
+    Integer getNumLvl(PPr paragraphProperties) {
+        if (paragraphProperties != null && paragraphProperties.getNumPr() != null) {
+            return paragraphProperties.getNumPr().getIlvl().getVal().intValue();
+        } else {
+            return null;
+        }
+    }
+
     Paragraph<Double, Boolean> getDefaultProperties(DocDefaults docDefaults) {
         return new ParagraphDefaultsParser(docDefaults).parseParagraph();
     }

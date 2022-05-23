@@ -6,6 +6,7 @@ import com.formatChecker.comparer.differ.RunsCountDiffer;
 import com.formatChecker.comparer.model.Difference;
 import com.formatChecker.comparer.model.participants.HeadingsList;
 import com.formatChecker.config.model.Config;
+import com.formatChecker.config.model.participants.Numbering;
 import com.formatChecker.config.model.participants.Paragraph;
 import com.formatChecker.config.model.participants.Run;
 import com.formatChecker.controller.helper.RunHelper;
@@ -21,9 +22,7 @@ import org.docx4j.wml.P;
 import org.docx4j.wml.R;
 import org.docx4j.wml.Styles;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 public class ParagraphController implements RunHelper {
     private static final String HEADING_STYLE_NAME = "heading";
@@ -42,6 +41,7 @@ public class ParagraphController implements RunHelper {
     List<String> paragraphsOnNewPages;
     DocxDocument docxDocument;
     Map<Integer, String> configStyles;
+    HashMap<Integer, Numbering> numberings;
 
     Styles styles;
     DocDefaults docDefaults;
@@ -56,7 +56,8 @@ public class ParagraphController implements RunHelper {
                                Config config,
                                Map<Integer, String> configStyles,
                                HeadingsList headings,
-                               List<String> paragraphsOnNewPages) throws Docx4JException {
+                               List<String> paragraphsOnNewPages,
+                               HashMap<Integer, Numbering> numberings) throws Docx4JException {
         this.index = index;
         this.documentParagraph = documentParagraph;
 
@@ -64,6 +65,7 @@ public class ParagraphController implements RunHelper {
         this.documentData = documentData;
         this.headings = headings;
         this.paragraphsOnNewPages = paragraphsOnNewPages;
+        this.numberings = numberings;
         this.docxDocument = docxDocument;
         this.config = config;
         this.configStyles = configStyles;
@@ -111,6 +113,8 @@ public class ParagraphController implements RunHelper {
         Paragraph<String, String> differenceParagraph = new ParagraphDiffer(actualParagraph, expectedParagraph)
                 .getParagraphDifference();
 
+        setUsedNumbering();
+
         if (shouldFix && !existenceCheck) {
             new ParagraphFixer(documentParagraph, actualParagraph, expectedParagraph, differenceParagraph)
                     .fixParagraph();
@@ -137,5 +141,12 @@ public class ParagraphController implements RunHelper {
         }
 
         return differenceParagraph;
+    }
+
+    void setUsedNumbering() {
+        if (actualParagraph.getNumId() != null) {
+            numberings.get(actualParagraph.getNumId()).setUsed(true);
+            numberings.get(actualParagraph.getNumId()).getNumberingLevels().get(actualParagraph.getNumLvl()).setUsed(true);
+        }
     }
 }

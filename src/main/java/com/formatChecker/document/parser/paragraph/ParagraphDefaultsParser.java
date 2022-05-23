@@ -37,6 +37,9 @@ public class ParagraphDefaultsParser extends ParagraphParser implements Paragrap
             setLineSpacing();
             setSpacingBefore();
             setSpacingAfter();
+
+            setNumId();
+            setNumLvl();
         }
 
         return paragraph;
@@ -83,5 +86,17 @@ public class ParagraphDefaultsParser extends ParagraphParser implements Paragrap
     public void setSpacingAfter() {
         Double lineSpacing = getSpacingAfter(getSpacing(paragraphProperties));
         paragraph.setSpacingAfter(lineSpacing != null ? lineSpacing : ParagraphDefaultsParser.DEFAULT_SPACING_BEFORE);
+    }
+
+    @Override
+    public void setNumId() {
+        Integer numId = getNumId(paragraphProperties);
+        paragraph.setNumId(numId);
+    }
+
+    @Override
+    public void setNumLvl() {
+        Integer numLvl = getNumLvl(paragraphProperties);
+        paragraph.setNumLvl(numLvl);
     }
 }

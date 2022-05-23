@@ -19,12 +19,14 @@ public class Config {
 
     List<Heading> requiredHeadings;
 
+    List<Numbering> numbering;
+
     @SerializedName("existence")
     ExistenceConfig existenceConfig;
 
     Boolean findHeadingsByTOC = false;
-    Boolean generateNewDocument = false;
 
+    Boolean generateNewDocument = false;
     public String getFilename() {
         return filename;
     }
@@ -67,5 +69,9 @@ public class Config {
 
     public Boolean getGenerateNewDocument() {
         return generateNewDocument;
+    }
+
+    public List<Numbering> getNumbering() {
+        return numbering;
     }
 }

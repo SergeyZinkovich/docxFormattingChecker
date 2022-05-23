@@ -1,5 +1,8 @@
 package com.formatChecker.config.model.participants;
 
+import org.docx4j.wml.Numbering;
+import org.docx4j.wml.PPrBase;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,6 +31,9 @@ public class Paragraph<T, D> {
     T lineSpacing;
     T spacingBefore;
     T spacingAfter;
+
+    Integer numId;
+    Integer numLvl;
 
     public void addRun(Run run) {
         runs.add(run);
@@ -79,6 +85,14 @@ public class Paragraph<T, D> {
 
     public void setMinRunsCount(T minRunsCount) {
         this.minRunsCount = minRunsCount;
+    }
+
+    public void setNumId(Integer numId) {
+        this.numId = numId;
+    }
+
+    public void setNumLvl(Integer numLvl) {
+        this.numLvl = numLvl;
     }
 
     public String getId() {
@@ -139,5 +153,13 @@ public class Paragraph<T, D> {
 
     public T getMinRunsCount() {
         return minRunsCount;
+    }
+
+    public Integer getNumId() {
+        return numId;
+    }
+
+    public Integer getNumLvl() {
+        return numLvl;
     }
 }

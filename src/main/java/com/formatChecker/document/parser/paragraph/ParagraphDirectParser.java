@@ -86,6 +86,9 @@ public class ParagraphDirectParser extends ParagraphParser implements ParagraphS
         setSpacingBefore();
         setSpacingAfter();
 
+        setNumId();
+        setNumLvl();
+
         setIsHeading();
         setPageBreakBefore();
 
@@ -186,6 +189,26 @@ public class ParagraphDirectParser extends ParagraphParser implements ParagraphS
                     defaultParagraph.getSpacingAfter();
         }
         paragraph.setSpacingAfter(spacingAfter);
+    }
+
+    @Override
+    public void setNumId() {
+        Integer numId = getNumId(paragraphProperties);
+        if (numId == null) {
+            numId = styleParagraph != null ? styleParagraph.getNumId() :
+                    defaultParagraph.getNumId();
+        }
+        paragraph.setNumId(numId);
+    }
+
+    @Override
+    public void setNumLvl() {
+        Integer numLvl = getNumLvl(paragraphProperties);
+        if (numLvl == null) {
+            numLvl = styleParagraph != null ? styleParagraph.getNumLvl() :
+                    defaultParagraph.getNumLvl();
+        }
+        paragraph.setNumLvl(numLvl);
     }
 
     void setIsHeading() {

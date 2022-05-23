@@ -42,6 +42,9 @@ public class ParagraphStyleParser extends ParagraphParser implements ParagraphSe
         setSpacingBefore();
         setSpacingAfter();
 
+        setNumId();
+        setNumLvl();
+
         return paragraph;
     }
 
@@ -159,5 +162,37 @@ public class ParagraphStyleParser extends ParagraphParser implements ParagraphSe
         }
 
         paragraph.setSpacingAfter(spacingAfter);
+    }
+
+    @Override
+    public void setNumId() {
+        Integer numId = getNumId(paragraphProperties);
+
+        while (parentStyle != null && numId == null) {
+            numId = getNumId(getParagraphProperties(parentStyle));
+            parentStyle = getParentStyle(parentStyle, styles);
+        }
+
+        if (numId == null) {
+            numId = defaultParagraph.getNumId();
+        }
+
+        paragraph.setNumId(numId);
+    }
+
+    @Override
+    public void setNumLvl() {
+        Integer numLvl = getNumLvl(paragraphProperties);
+
+        while (parentStyle != null && numLvl == null) {
+            numLvl = getNumLvl(getParagraphProperties(parentStyle));
+            parentStyle = getParentStyle(parentStyle, styles);
+        }
+
+        if (numLvl == null) {
+            numLvl = defaultParagraph.getNumLvl();
+        }
+
+        paragraph.setNumLvl(numLvl);
     }
 }
