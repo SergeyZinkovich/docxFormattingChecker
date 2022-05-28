@@ -10,45 +10,45 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Difference {
+    String filename;
+    String pages;
+    String paragraphsCount;
+    String numbering;
+    List<Section<String>> sections;
+    List<Paragraph<String, String>> paragraphs;
+    Footer footer;
+    DrawingsList drawings;
+    HeadingsList headings;
+    ArrayList<String> existenceConfig;
+
     public Difference() {
         this.paragraphs = new ArrayList<>();
         this.sections = new ArrayList<>();
         this.existenceConfig = new ArrayList<>();
     }
 
-    String filename;
-    String pages;
-    String paragraphsCount;
-
-    String numbering;
-
-    List<Section<String>> sections;
-
-    List<Paragraph<String, String>> paragraphs;
-    Footer footer;
-    DrawingsList drawings;
-    HeadingsList headings;
-
-    ArrayList<String> existenceConfig;
-
     public String getFilename() {
         return filename;
     }
 
-    public void setPages(String pages) {
-        this.pages = pages;
+    public void setFilename(String filename) {
+        this.filename = filename;
     }
 
     public String getPages() {
         return pages;
     }
 
-    public void setParagraphsCount(String paragraphsCount) {
-        this.paragraphsCount = paragraphsCount;
+    public void setPages(String pages) {
+        this.pages = pages;
     }
 
     public String getParagraphsCount() {
         return paragraphsCount;
+    }
+
+    public void setParagraphsCount(String paragraphsCount) {
+        this.paragraphsCount = paragraphsCount;
     }
 
     public List<Section<String>> getSections() {
@@ -63,16 +63,16 @@ public class Difference {
         return footer;
     }
 
+    public void setFooter(Footer footer) {
+        this.footer = footer;
+    }
+
     public DrawingsList getDrawings() {
         return drawings;
     }
 
-    public void setFilename(String filename) {
-        this.filename = filename;
-    }
-
-    public void setFooter(Footer footer) {
-        this.footer = footer;
+    public void setDrawings(DrawingsList drawings) {
+        this.drawings = drawings;
     }
 
     public HeadingsList getHeadings() {
@@ -89,10 +89,6 @@ public class Difference {
 
     public void addSection(Section<String> section) {
         sections.add(section);
-    }
-
-    public void setDrawings(DrawingsList drawings) {
-        this.drawings = drawings;
     }
 
     public ArrayList<String> getExistenceConfig() {

@@ -25,13 +25,13 @@ public class NumberingDiffer {
             return difference;
         }
 
-        for (Numbering num1: actualNumbering.values()) {
+        for (Numbering num1 : actualNumbering.values()) {
             if (!num1.getUsed()) {
                 continue;
             }
 
             boolean b = true;
-            for (Numbering num2: expectedNumbering) {
+            for (Numbering num2 : expectedNumbering) {
                 b &= compareNumbering(num1, num2);
             }
 

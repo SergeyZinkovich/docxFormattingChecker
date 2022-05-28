@@ -84,7 +84,7 @@ public class DrawingController {
         DrawingsList list = new DrawingsList();
         list.setErrorMessage(drawingsList.getErrorMessage());
 
-        for (Drawing<Double, Boolean> drawing: drawingsList.getDrawings()) {
+        for (Drawing<Double, Boolean> drawing : drawingsList.getDrawings()) {
             Drawing<String, String> differenceDrawing = new DrawingDiffer(drawing, expectedDrawing)
                     .getDifferenceDrawing();
 

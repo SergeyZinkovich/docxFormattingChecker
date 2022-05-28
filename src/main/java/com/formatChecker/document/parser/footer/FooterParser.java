@@ -74,8 +74,7 @@ public class FooterParser {
                 alignment = element.getAttribute("w:val");
 
             return alignment;
-        }
-        else
+        } else
             return null;
     }
 

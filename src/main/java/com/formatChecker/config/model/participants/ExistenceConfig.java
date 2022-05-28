@@ -10,12 +10,12 @@ public class ExistenceConfig {
         return runs;
     }
 
-    public List<Paragraph<Double, Boolean>> getParagraphs() {
-        return paragraphs;
-    }
-
     public void setRuns(List<Run<Boolean, Double>> runs) {
         this.runs = runs;
+    }
+
+    public List<Paragraph<Double, Boolean>> getParagraphs() {
+        return paragraphs;
     }
 
     public void setParagraphs(List<Paragraph<Double, Boolean>> paragraphs) {

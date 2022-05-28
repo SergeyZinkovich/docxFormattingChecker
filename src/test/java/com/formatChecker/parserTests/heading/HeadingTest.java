@@ -5,8 +5,8 @@ import com.formatChecker.config.parser.ConfigParser;
 import com.formatChecker.controller.DocumentController;
 import com.formatChecker.document.model.DocxDocument;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 import static com.formatChecker.parserTests.constants.PathConstants.HEADING_CONFIG_PATH;
 import static com.formatChecker.parserTests.constants.PathConstants.HEADING_DOCUMENT_PATH;

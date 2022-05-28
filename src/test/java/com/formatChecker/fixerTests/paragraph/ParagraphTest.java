@@ -3,8 +3,8 @@ package com.formatChecker.fixerTests.paragraph;
 import com.formatChecker.comparer.collector.DifferResultCollector;
 import com.formatChecker.controller.DocumentController;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 import static com.formatChecker.fixerTests.constants.MessageConstants.OK_MESSAGE;
 import static com.formatChecker.fixerTests.constants.PathConstants.*;

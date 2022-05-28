@@ -85,7 +85,7 @@ public class RunController {
             if (expectedStyle.getParagraph().getRuns().size() > runIndex) {
                 expectedRun = expectedStyle.getParagraph().getRuns().get(runIndex);
             } else {
-                expectedRun = expectedStyle.getParagraph().getRuns().get(expectedStyle.getParagraph().getRuns().size()-1);
+                expectedRun = expectedStyle.getParagraph().getRuns().get(expectedStyle.getParagraph().getRuns().size() - 1);
             }
 
             compareRun(expectedRun, false);

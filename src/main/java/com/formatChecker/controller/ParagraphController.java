@@ -22,7 +22,10 @@ import org.docx4j.wml.P;
 import org.docx4j.wml.R;
 import org.docx4j.wml.Styles;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 public class ParagraphController implements RunHelper {
     private static final String HEADING_STYLE_NAME = "heading";
@@ -128,7 +131,7 @@ public class ParagraphController implements RunHelper {
                     ++count;
 
                     Run<Boolean, Double> actualRun = (Run<Boolean, Double>) actualParagraph.getRuns().get(count - 1);
-                    new RunController(index, count-1, r, actualRun, differenceParagraph, configStyles,
+                    new RunController(index, count - 1, r, actualRun, differenceParagraph, configStyles,
                             actualParagraph.getHeadingLevel(), config, shouldFix).parseRun();
                 }
             }

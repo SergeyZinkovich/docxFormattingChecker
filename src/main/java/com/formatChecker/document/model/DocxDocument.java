@@ -9,27 +9,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DocxDocument {
-    public DocxDocument() {
-        this.paragraphs = new ArrayList<>();
-        this.sections = new ArrayList<>();
-    }
-
     List<Paragraph<Double, Boolean>> paragraphs;
     Integer pages;
     List<Section<Double>> sections;
     Footer footer;
     DrawingsList drawings;
-
-    public void setPages(Integer pages) {
-        this.pages = pages;
+    public DocxDocument() {
+        this.paragraphs = new ArrayList<>();
+        this.sections = new ArrayList<>();
     }
 
     public Integer getPages() {
         return pages;
     }
 
-    public void setFooter(Footer footer) {
-        this.footer = footer;
+    public void setPages(Integer pages) {
+        this.pages = pages;
     }
 
     public void addParagraph(Paragraph<Double, Boolean> paragraph) {
@@ -42,6 +37,10 @@ public class DocxDocument {
 
     public Footer getFooter() {
         return footer;
+    }
+
+    public void setFooter(Footer footer) {
+        this.footer = footer;
     }
 
     public List<Paragraph<Double, Boolean>> getParagraphs() {

@@ -31,7 +31,7 @@ public class HeadingDiffer {
 
         List<Heading> headings = new ArrayList<>();
 
-        for (Heading expectedHeading: expectedHeadings) {
+        for (Heading expectedHeading : expectedHeadings) {
             Heading heading = new Heading();
 
             boolean hasHeading = actualHeadings.getHeadings()

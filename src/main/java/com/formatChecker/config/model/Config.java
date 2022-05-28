@@ -27,6 +27,7 @@ public class Config {
     Boolean findHeadingsByTOC = false;
 
     Boolean generateNewDocument = false;
+
     public String getFilename() {
         return filename;
     }

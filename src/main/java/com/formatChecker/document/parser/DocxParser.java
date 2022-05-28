@@ -72,8 +72,7 @@ public class DocxParser {
     Numbering parseNumbering() {
         if (wordprocessingMLPackage.getMainDocumentPart().getNumberingDefinitionsPart() != null) {
             return wordprocessingMLPackage.getMainDocumentPart().getNumberingDefinitionsPart().getJaxbElement();
-        }
-        else {
+        } else {
             return null;
         }
     }
@@ -135,9 +134,7 @@ public class DocxParser {
             if (TOCObjects.size() < TOCElementObjects.size())
                 headingsList.setWarningMessage("Cannot recognize headings: please remove extra links within the text " +
                         "and update Table of Contents");
-        }
-
-        else {
+        } else {
             for (int i = 0; i < TOCObjects.size(); ++i) {
                 Heading heading = new Heading();
 
@@ -179,7 +176,7 @@ public class DocxParser {
         if (drawingTOCObjects.size() != descriptionTOCObjects.size())
             drawingsRawList.setErrorMessage(
                     "Error: number of drawings does not match number of drawing descriptions.\n\t" +
-                    "Please add a description to each drawing.");
+                            "Please add a description to each drawing.");
 
         for (int i = 0; i < drawingTOCObjects.size(); ++i) {
             DrawingRaw drawingRaw = new DrawingRaw();

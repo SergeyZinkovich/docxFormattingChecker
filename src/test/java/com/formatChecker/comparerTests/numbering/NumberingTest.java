@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 
 import static com.formatChecker.fixerTests.constants.MessageConstants.OK_MESSAGE;
 import static com.formatChecker.parserTests.constants.PathConstants.*;
-import static com.formatChecker.parserTests.constants.PathConstants.EXISTENCE_RUN_INCORRECT_DOCUMENT_PATH;
 
 public class NumberingTest {
     @DisplayName("Checks numbering, when it is correct")

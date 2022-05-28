@@ -23,7 +23,7 @@ public class DrawingDiffer {
         if (actualDrawing == null && expectedDrawing != null)
             return null;
         else if (actualDrawing != null && expectedDrawing == null)
-            return  null;
+            return null;
         else {
             if (actualDrawing.getText() != null)
                 drawing.setText(actualDrawing.getText().replaceAll(DESCRIPTION_EXTRA_WORDS, ""));

@@ -30,7 +30,7 @@ public class ExistenceConfigDifference {
             return result;
         }
 
-        for(Paragraph<Double, Boolean> paragraph: existenceConfig.getParagraphs()) {
+        for (Paragraph<Double, Boolean> paragraph : existenceConfig.getParagraphs()) {
             String paragraphResult = "Doesn't exist paragraph with params: ";
 
             if (paragraph.getText() != null)
@@ -76,7 +76,7 @@ public class ExistenceConfigDifference {
             return result;
         }
 
-        for(Run<Boolean, Double> run: existenceConfig.getRuns()) {
+        for (Run<Boolean, Double> run : existenceConfig.getRuns()) {
             String runResult = "Doesn't exist run with params: ";
 
             if (run.getText() != null)

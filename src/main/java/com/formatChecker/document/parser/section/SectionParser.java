@@ -38,14 +38,26 @@ public class SectionParser implements ValuesConverter {
         return orientation != null ? orientation.value().toLowerCase() : DEFAULT_ORIENTATION;
     }
 
+    void setOrientation(Section<Double> section) {
+        section.setOrientation(getOrientation());
+    }
+
     Double getPageHeight() {
         BigInteger pageHeight = sectionProperties.getPgSz().getH();
         return pageValToCm(pageHeight);
     }
 
+    void setPageHeight(Section<Double> section) {
+        section.setPageHeight(getPageHeight());
+    }
+
     Double getPageWidth() {
         BigInteger pageWidth = sectionProperties.getPgSz().getW();
         return pageValToCm(pageWidth);
+    }
+
+    void setPageWidth(Section<Double> section) {
+        section.setPageWidth(getPageWidth());
     }
 
     List<Double> getMargins() {
@@ -56,18 +68,6 @@ public class SectionParser implements ValuesConverter {
                 pageValToCm(margins.getRight()),
                 pageValToCm(margins.getBottom()),
                 pageValToCm(margins.getLeft())));
-    }
-
-    void setOrientation(Section<Double> section) {
-        section.setOrientation(getOrientation());
-    }
-
-    void setPageHeight(Section<Double> section) {
-        section.setPageHeight(getPageHeight());
-    }
-
-    void setPageWidth(Section<Double> section) {
-        section.setPageWidth(getPageWidth());
     }
 
     void setMargins(Section<Double> section) {

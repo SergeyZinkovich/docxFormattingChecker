@@ -12,18 +12,6 @@ public class Numbering {
         this.numberingLevels = new ArrayList<>();
     }
 
-    public void setUsed(Boolean used) {
-        this.used = used;
-    }
-
-    public void setNumberingLevels(List<NumberingLevel> numberingLevels) {
-        this.numberingLevels = numberingLevels;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
     public void addNumberingLevel(NumberingLevel numberingLevel) {
         this.numberingLevels.add(numberingLevel);
     }
@@ -32,11 +20,23 @@ public class Numbering {
         return used;
     }
 
+    public void setUsed(Boolean used) {
+        this.used = used;
+    }
+
     public Integer getId() {
         return id;
     }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public List<NumberingLevel> getNumberingLevels() {
         return numberingLevels;
+    }
+
+    public void setNumberingLevels(List<NumberingLevel> numberingLevels) {
+        this.numberingLevels = numberingLevels;
     }
 }

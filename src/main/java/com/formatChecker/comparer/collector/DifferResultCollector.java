@@ -376,7 +376,7 @@ public class DifferResultCollector {
         StringBuilder result = new StringBuilder();
         existenceErrors = 0;
 
-        for(String msg: difference.getExistenceConfig()) {
+        for (String msg : difference.getExistenceConfig()) {
             result.append(msg).append("\n\t");
             existenceErrors++;
         }
