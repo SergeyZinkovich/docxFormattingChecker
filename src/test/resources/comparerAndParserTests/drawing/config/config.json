@@ -1,25 +1,29 @@
 {
-    "styles": {
-        "test": {
-            "paragraphs": [1, 2, 3],
-            "paragraphProperties": {
-            }
-        }
-    },
-    "drawing": {
-        "textStartsWith": "Рисунок",
-        "drawingPosition": {
-            "alignment": "center"
-        },
-        "description": {
-            "paragraphProperties": {
-                "alignment": "center",
-				"runs": [
-					{
-						"fontSize": 14
-					}
-				]
-            }
-        }
+  "styles": {
+    "test": {
+      "paragraphs": [
+        1,
+        2,
+        3
+      ],
+      "paragraphProperties": {
+      }
     }
+  },
+  "drawing": {
+    "textStartsWith": "Рисунок",
+    "drawingPosition": {
+      "alignment": "center"
+    },
+    "description": {
+      "paragraphProperties": {
+        "alignment": "center",
+        "runs": [
+          {
+            "fontSize": 14
+          }
+        ]
+      }
+    }
+  }
 }

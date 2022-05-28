@@ -1,15 +1,14 @@
 {
-    "styles": {
-        "heading1": {
-            "paragraphProperties": {
-            }
-        },
-
-        "body": {
-		    "paragraphProperties": {
-            }
-        }
+  "styles": {
+    "heading1": {
+      "paragraphProperties": {
+      }
     },
-    "filename": ".*Диплом.*",
-	"findHeadingsByTOC": true
+    "body": {
+      "paragraphProperties": {
+      }
+    }
+  },
+  "filename": ".*Диплом.*",
+  "findHeadingsByTOC": true
 }

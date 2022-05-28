@@ -1,27 +1,26 @@
 {
-    "styles": {
-        "heading1": {
-            "paragraphProperties": {
-                "alignment": "center",
-				"runs": [
-					{
-						"fontFamily": "Comic Sans MS",
-						"bold": true
-					}
-				]
-            }
-        },
-
-        "body": {
-            "paragraphProperties": {
-                "firstLineIndent": 1.25,
-				"runs": [
-					{
-						"fontSize": 11
-					}
-				]
-			}
-        }
+  "styles": {
+    "heading1": {
+      "paragraphProperties": {
+        "alignment": "center",
+        "runs": [
+          {
+            "fontFamily": "Comic Sans MS",
+            "bold": true
+          }
+        ]
+      }
     },
-    "findHeadingsByTOC": true
+    "body": {
+      "paragraphProperties": {
+        "firstLineIndent": 1.25,
+        "runs": [
+          {
+            "fontSize": 11
+          }
+        ]
+      }
+    }
+  },
+  "findHeadingsByTOC": true
 }

@@ -1,21 +1,21 @@
 {
-    "styles": {
-        "test": {
-            "paragraphs": [],
-            "paragraphProperties": {
-            }
+  "styles": {
+    "test": {
+      "paragraphs": [],
+      "paragraphProperties": {
+      }
+    }
+  },
+  "existence": {
+  },
+  "numbering": [
+    {
+      "numberingLevels": [
+        {
+          "type": "bullet",
+          "text": ""
         }
-    },
-	"existence": {
-	},
-	"numbering": [
-		{
-			"numberingLevels": [
-				{
-					"type": "bullet",
-					"text": ""
-				}
-			]
-		}
-	]
+      ]
+    }
+  ]
 }

@@ -1,11 +1,13 @@
 {
-    "styles": {
-        "test": {
-            "paragraphs": [2],
-            "paragraphProperties": {
-				"maxRunsCount": 6,
-				"minRunsCount": 6
-            }
-        }
+  "styles": {
+    "test": {
+      "paragraphs": [
+        2
+      ],
+      "paragraphProperties": {
+        "maxRunsCount": 6,
+        "minRunsCount": 6
+      }
     }
+  }
 }

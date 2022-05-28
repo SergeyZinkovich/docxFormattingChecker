@@ -1,28 +1,31 @@
 {
-    "styles": {
-        "style1": {
-            "paragraphs": [1],
-            "paragraphProperties": {
-                "alignment": "center",
-				"runs": [
-					{
-						"fontFamily": "Comic Sans MS",
-						"bold": true
-					}
-				]
-            }
-        },
-
-        "style2": {
-            "paragraphs": [2],
-            "paragraphProperties": {
-                "firstLineIndent": 1.25,
-				"runs": [
-					{
-						"fontSize": 11
-					}
-				]
-            }
-        }
+  "styles": {
+    "style1": {
+      "paragraphs": [
+        1
+      ],
+      "paragraphProperties": {
+        "alignment": "center",
+        "runs": [
+          {
+            "fontFamily": "Comic Sans MS",
+            "bold": true
+          }
+        ]
+      }
+    },
+    "style2": {
+      "paragraphs": [
+        2
+      ],
+      "paragraphProperties": {
+        "firstLineIndent": 1.25,
+        "runs": [
+          {
+            "fontSize": 11
+          }
+        ]
+      }
     }
+  }
 }

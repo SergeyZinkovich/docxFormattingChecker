@@ -1,10 +1,12 @@
 {
-    "styles": {
-        "test": {
-            "paragraphs": [2],
-            "paragraphProperties": {
-				"text": ".*Maecenas auctor magna sit amet mi tempor, eu vestibulum est viverra.*"
-            }
-        }
+  "styles": {
+    "test": {
+      "paragraphs": [
+        2
+      ],
+      "paragraphProperties": {
+        "text": ".*Maecenas auctor magna sit amet mi tempor, eu vestibulum est viverra.*"
+      }
     }
+  }
 }

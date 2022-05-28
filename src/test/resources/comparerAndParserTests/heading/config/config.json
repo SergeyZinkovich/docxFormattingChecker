@@ -1,36 +1,36 @@
 {
-    "styles": {
-        "heading1": {
-            "paragraphProperties": {
-            }
-        },
-        "heading2": {
-            "paragraphProperties": {
-            }
-        },
-        "heading3": {
-            "paragraphProperties": {
-            }
-        },
-        "body": {
-            "paragraphProperties": {
-            }
-        }
+  "styles": {
+    "heading1": {
+      "paragraphProperties": {
+      }
     },
-    "requiredHeadings": [
-        {
-            "level": 1,
-            "text": "Heading 1",
-            "pageBreakBefore": true
-        },
-        {
-            "level": 2,
-            "text": "Heading 2"
-        },
-        {
-            "level": 3,
-            "text": "Heading 3"
-        }
-    ],
-    "findHeadingsByTOC": true
+    "heading2": {
+      "paragraphProperties": {
+      }
+    },
+    "heading3": {
+      "paragraphProperties": {
+      }
+    },
+    "body": {
+      "paragraphProperties": {
+      }
+    }
+  },
+  "requiredHeadings": [
+    {
+      "level": 1,
+      "text": "Heading 1",
+      "pageBreakBefore": true
+    },
+    {
+      "level": 2,
+      "text": "Heading 2"
+    },
+    {
+      "level": 3,
+      "text": "Heading 3"
+    }
+  ],
+  "findHeadingsByTOC": true
 }

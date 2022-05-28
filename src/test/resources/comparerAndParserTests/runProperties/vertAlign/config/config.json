@@ -1,14 +1,16 @@
 {
-    "styles": {
-        "test": {
-            "paragraphs": [1],
-            "paragraphProperties": {
-				"runs": [
-					{
-						"vertAlign": "subscript"
-					}
-				]
-            }
-        }
+  "styles": {
+    "test": {
+      "paragraphs": [
+        1
+      ],
+      "paragraphProperties": {
+        "runs": [
+          {
+            "vertAlign": "subscript"
+          }
+        ]
+      }
     }
+  }
 }

@@ -1,13 +1,15 @@
 {
-    "styles": {
-        "test": {
-            "paragraphs": [1],
-            "paragraphProperties": {
-            }
-        }
-    },
-    "footer": {
-        "type": "page",
-        "alignment": "center"
+  "styles": {
+    "test": {
+      "paragraphs": [
+        1
+      ],
+      "paragraphProperties": {
+      }
     }
+  },
+  "footer": {
+    "type": "page",
+    "alignment": "center"
+  }
 }

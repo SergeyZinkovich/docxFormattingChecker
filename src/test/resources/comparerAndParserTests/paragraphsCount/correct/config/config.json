@@ -1,18 +1,17 @@
 {
-    "styles": {
-        "heading1": {
-            "paragraphProperties": {
-            }
-        },
-
-        "body": {
-		    "paragraphProperties": {
-            }
-        }
+  "styles": {
+    "heading1": {
+      "paragraphProperties": {
+      }
     },
-    "paragraphsCount": {
-        "min": 1,
-        "max": 6
-    },
-	"findHeadingsByTOC": true
+    "body": {
+      "paragraphProperties": {
+      }
+    }
+  },
+  "paragraphsCount": {
+    "min": 1,
+    "max": 6
+  },
+  "findHeadingsByTOC": true
 }
