@@ -32,6 +32,7 @@ public class RunFixer implements ConfigConverter {
             fixFontSize(runProperties);
             fixFontFamily(runProperties);
             fixUnderline(runProperties);
+            fixVertAlign(runProperties);
         }
     }
 
@@ -44,6 +45,7 @@ public class RunFixer implements ConfigConverter {
         fixFontSize(newRunProperties);
         fixFontFamily(newRunProperties);
         fixUnderline(newRunProperties);
+        fixVertAlign(newRunProperties);
 
         run.setRPr(newRunProperties);
     }
@@ -93,6 +95,14 @@ public class RunFixer implements ConfigConverter {
             U underline = new U();
             underline.setVal(convertUnderline(expectedRun.getUnderline()));
             rpr.setU(underline);
+        }
+    }
+
+    void fixVertAlign(RPr rpr) {
+        if (differenceRun.getVertAlign() != null) {
+            CTVerticalAlignRun verticalAlign = new CTVerticalAlignRun();
+            verticalAlign.setVal(convertVertAlign(expectedRun.getVertAlign()));
+            rpr.setVertAlign(verticalAlign);
         }
     }
 }

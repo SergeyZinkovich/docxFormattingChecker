@@ -2,6 +2,7 @@ package com.formatChecker.config.converter;
 
 import org.docx4j.wml.JcEnumeration;
 import org.docx4j.wml.STPageOrientation;
+import org.docx4j.wml.STVerticalAlignRun;
 import org.docx4j.wml.UnderlineEnumeration;
 
 import java.math.BigDecimal;
@@ -85,6 +86,20 @@ public interface ConfigConverter {
                 return UnderlineEnumeration.WAVY_HEAVY;
             case "weavyDouble":
                 return UnderlineEnumeration.WAVY_DOUBLE;
+            default:
+                return null;
+        }
+    }
+
+    default STVerticalAlignRun convertVertAlign(String vertAlign) {
+        vertAlign = vertAlign.toLowerCase();
+        switch (vertAlign) {
+            case "baseline":
+                return STVerticalAlignRun.BASELINE;
+            case "superscript":
+                return STVerticalAlignRun.SUPERSCRIPT;
+            case "subscript":
+                return STVerticalAlignRun.SUBSCRIPT;
             default:
                 return null;
         }

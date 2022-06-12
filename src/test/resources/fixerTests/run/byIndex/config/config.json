@@ -18,12 +18,16 @@
         2
       ],
       "paragraphProperties": {
-      },
-      "runProperties": {
-        "fontFamily": "Times New Roman",
-        "fontSize": 12,
-        "bold": false,
-        "italic": true
+        "runs" : [
+          {
+            "fontFamily": "Times New Roman",
+            "fontSize": 12,
+            "bold": false,
+            "italic": true,
+            "underline": "none",
+            "vertAlign": "superscript"
+          }
+        ]
       }
     }
   },
