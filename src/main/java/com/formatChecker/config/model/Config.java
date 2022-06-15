@@ -18,8 +18,9 @@ public class Config {
     ConfigDrawing drawing;
 
     List<Heading> requiredHeadings;
-
     List<Numbering> numbering;
+
+    Table table;
 
     @SerializedName("existence")
     ExistenceConfig existenceConfig;
@@ -74,5 +75,13 @@ public class Config {
 
     public List<Numbering> getNumbering() {
         return numbering;
+    }
+
+    public Table getTable() {
+        return table;
+    }
+
+    public void setTable(Table table) {
+        this.table = table;
     }
 }

@@ -14,11 +14,10 @@ import com.formatChecker.document.parser.numbering.NumberingDefinitionParser;
 import org.docx4j.Docx4J;
 import org.docx4j.openpackaging.exceptions.Docx4JException;
 import org.docx4j.openpackaging.packages.WordprocessingMLPackage;
-import org.docx4j.wml.P;
-import org.docx4j.wml.SdtBlock;
-import org.docx4j.wml.SectPr;
+import org.docx4j.wml.*;
 import org.xml.sax.SAXException;
 
+import javax.xml.bind.JAXBElement;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.FileInputStream;
@@ -144,6 +143,20 @@ public class DocumentController {
                                 .parseParagraph();
                     }
                 }
+            } else if (p instanceof JAXBElement) {
+                JAXBElement<Tbl> j = (JAXBElement<Tbl>) p;
+
+                new TableController(j,
+                        count,
+                        difference,
+                        docxDocument,
+                        documentData,
+                        config,
+                        configStyles,
+                        headings,
+                        paragraphOnNewPageIds,
+                        numberings,
+                        afterTOC).parseTable();
             }
         }
 

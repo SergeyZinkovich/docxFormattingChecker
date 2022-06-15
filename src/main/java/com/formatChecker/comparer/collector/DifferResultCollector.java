@@ -19,6 +19,7 @@ public class DifferResultCollector {
     String headingResult;
     String numberingResult;
 
+    StringBuilder tableResult;
     StringBuilder drawingsResult;
     StringBuilder paragraphsResult;
     StringBuilder existenceConfigResult;
@@ -30,6 +31,7 @@ public class DifferResultCollector {
     Integer headingErrors;
     Integer existenceErrors;
     Integer numberingErrors;
+    Integer tableErrors;
 
     String differenceAsString;
 
@@ -61,6 +63,7 @@ public class DifferResultCollector {
         existenceConfigResult = getExistenceConfigDifferenceAsString();
         drawingsResult = getDrawingsDifferenceAsString();
         numberingResult = getNumberingDifferenceAsString();
+        tableResult = getTableDifferenceAsString();
 
         String totalResult = filenameResult +
                 pagesResult +
@@ -71,6 +74,7 @@ public class DifferResultCollector {
                 paragraphsResult +
                 existenceConfigResult +
                 numberingResult +
+                tableResult +
                 drawingsResult;
 
         return totalResult.equals("") ?
@@ -88,9 +92,10 @@ public class DifferResultCollector {
         String paragraph = String.format("\n\tParagraphs with errors: %d", paragraphErrors);
         String existence = String.format("\n\tMissing elements: %d", existenceErrors);
         String numbering = String.format("\n\tNumbering errors: %d", numberingErrors);
+        String table = String.format("\n\tTable errors: %d", tableErrors);
         String mostCommon = String.format("\n\tMost common error: %s", getMostCommonError(totalResult));
 
-        return total + section + drawing + footer + heading + paragraph + mostCommon + existence + numbering + totalResult;
+        return total + section + drawing + footer + heading + paragraph + mostCommon + existence + numbering + table + totalResult;
     }
 
     String getFilenameDifferenceAsString() {
@@ -121,6 +126,18 @@ public class DifferResultCollector {
         }
 
         return "";
+    }
+
+    StringBuilder getTableDifferenceAsString() {
+        StringBuilder result = new StringBuilder();
+        tableErrors = 0;
+
+        for (String msg : difference.getTables()) {
+            result.append(tableErrors + 1).append(" error ").append(msg).append("\n\t");
+            tableErrors++;
+        }
+
+        return result.toString().equals("") ? new StringBuilder() : new StringBuilder("\nTables errors::\n\t" + result);
     }
 
     String getSectionDifferenceAsString() {

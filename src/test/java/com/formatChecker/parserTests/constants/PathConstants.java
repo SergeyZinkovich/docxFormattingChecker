@@ -115,4 +115,14 @@ public class PathConstants {
             "numbering/incorrect/config/config.json";
     public static final String NUMBERING_INCORRECT_DOCUMENT_PATH = "src/test/resources/comparerAndParserTests/" +
             "numbering/incorrect/document/document.docx";
+
+    public static final String TABLE_V_ALIGN_CORRECT_CONFIG_PATH = "src/test/resources/comparerAndParserTests/" +
+            "table/vAlign/correct/config/config.json";
+    public static final String TABLE_V_ALIGN_CORRECT_DOCUMENT_PATH = "src/test/resources/comparerAndParserTests/" +
+            "table/vAlign/correct/document/document.docx";
+
+    public static final String TABLE_V_ALIGN_INCORRECT_CONFIG_PATH = "src/test/resources/comparerAndParserTests/" +
+            "table/vAlign/incorrect/config/config.json";
+    public static final String TABLE_V_ALIGN_INCORRECT_DOCUMENT_PATH = "src/test/resources/comparerAndParserTests/" +
+            "table/vAlign/incorrect/document/document.docx";
 }

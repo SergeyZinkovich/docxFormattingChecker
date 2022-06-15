@@ -14,6 +14,8 @@ public class Difference {
     String pages;
     String paragraphsCount;
     String numbering;
+
+    List<String> tables;
     List<Section<String>> sections;
     List<Paragraph<String, String>> paragraphs;
     Footer footer;
@@ -25,6 +27,7 @@ public class Difference {
         this.paragraphs = new ArrayList<>();
         this.sections = new ArrayList<>();
         this.existenceConfig = new ArrayList<>();
+        this.tables = new ArrayList<>();
     }
 
     public String getFilename() {
@@ -105,5 +108,17 @@ public class Difference {
 
     public void setNumbering(String numbering) {
         this.numbering = numbering;
+    }
+
+    public List<String> getTables() {
+        return tables;
+    }
+
+    public void setTables(List<String> tables) {
+        this.tables = tables;
+    }
+
+    public void addTable(String table) {
+        this.tables.add(table);
     }
 }
